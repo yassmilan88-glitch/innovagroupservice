@@ -82,6 +82,14 @@
     .voice-demo-form button,.voice-audio{background:#173246;color:white;border:0;padding:10px 13px;font-size:12px;font-weight:700;cursor:pointer}
     .voice-demo-bottom{padding:12px 18px;background:#edf3f2;color:#536773;font-size:11px;line-height:1.55}
     .voice-audio{margin:0 0 12px 18px;background:transparent;border:1px solid #b4c9d0;color:#173246}
+    .voice-demo-status{background:#f9faf8;padding:0 18px 13px;display:flex;align-items:center;gap:7px;color:#476775;font-size:11px;font-weight:700}
+    .voice-demo-status-led{display:inline-block;height:7px;width:7px;border-radius:50%;background:#28a37b}
+    .voice-chat{height:300px}
+    .voice-summary{align-self:stretch;max-width:100%;background:#fff;border:1px solid #b6d3d1;border-left:4px solid #e9794c;border-radius:10px;padding:13px 16px;line-height:1.7;font-size:12px;color:#183645;white-space:pre-line}
+    .voice-demo-form #voiceMic{background:#eff5f3;color:#183645;border:1px solid #ccdbd9;border-radius:5px;padding:8px 12px;font-size:16px}
+    .voice-demo-form #voiceMic[hidden],.voice-audio[hidden]{display:none}
+    .voice-demo-form #voiceMic.listening{color:#fff;background:#b84332;animation:voiceMicPulse 1.2s ease-in-out infinite}
+    @keyframes voiceMicPulse{50%{box-shadow:0 0 0 5px #b8433228}}
     .voice-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
     .voice-roi,.voice-plans{padding:28px;border:1px solid #ffffff26;background:#ffffff0b}
     .voice-roi h3,.voice-plans h3{font:800 22px 'Manrope',sans-serif;margin:0 0 8px}
@@ -157,7 +165,7 @@
             <h2 id="voice-title" data-i18n-html="voiceTitle">Tu lavori.<br><span>Alle chiamate pensa l'AI.</span></h2></div>
           <p class="voice-lead" data-i18n="voiceLead">Il nostro centralino intelligente risponde alle richieste quando sei occupato o fuori orario, raccoglie le informazioni essenziali e le passa al tuo team. Il servizio si configura per ogni attività.</p>
         </div>
-        <div class="voice-tags"><span data-i18n="voiceCat1">Studi dentistici</span><span data-i18n="voiceCat2">Fisioterapia</span><span data-i18n="voiceCat3">Centri estetici</span><span data-i18n="voiceCat4">Agenzie immobiliari</span><span data-i18n="voiceCat5">Officine</span></div>
+        <div class="voice-tags"><span data-i18n="voiceCat6">Idraulici</span><span data-i18n="voiceCat1">Studi dentistici</span><span data-i18n="voiceCat2">Fisioterapia</span><span data-i18n="voiceCat3">Centri estetici</span><span data-i18n="voiceCat4">Agenzie immobiliari</span><span data-i18n="voiceCat5">Officine</span></div>
         <div class="voice-grid">
           <div class="voice-value">
             <h3 data-i18n="voiceHowTitle">Un assistente, tre compiti concreti.</h3>
@@ -171,16 +179,18 @@
           <div class="voice-demo" aria-label="Demo Innova Voice">
             <div class="voice-demo-top"><div><h3 data-i18n="voiceDemoTitle">Prova il centralino AI</h3><small data-i18n="voiceDemoSub">Simulazione guidata · nessun dato inviato</small></div><span class="voice-demo-led" aria-hidden="true"></span></div>
             <div class="voice-tabs" role="tablist" aria-label="Settore">
-              <button type="button" data-voice-sector="dental" role="tab" aria-selected="true" data-i18n="voiceCat1">Studi dentistici</button>
+              <button type="button" data-voice-sector="plumber" role="tab" aria-selected="true" data-i18n="voiceCat6">Idraulici</button>
+              <button type="button" data-voice-sector="dental" role="tab" aria-selected="false" data-i18n="voiceCat1">Studi dentistici</button>
               <button type="button" data-voice-sector="physio" role="tab" aria-selected="false" data-i18n="voiceCat2">Fisioterapia</button>
               <button type="button" data-voice-sector="beauty" role="tab" aria-selected="false" data-i18n="voiceCat3">Centri estetici</button>
               <button type="button" data-voice-sector="estate" role="tab" aria-selected="false" data-i18n="voiceCat4">Agenzie immobiliari</button>
               <button type="button" data-voice-sector="garage" role="tab" aria-selected="false" data-i18n="voiceCat5">Officine</button>
             </div>
             <div class="voice-chat" id="voiceChat" aria-live="polite"></div>
+            <div class="voice-demo-status"><span class="voice-demo-status-led"></span><span data-i18n="voiceLiveSample">Idraulico · chiamata simulata con domande specifiche</span></div>
             <div class="voice-demo-actions" id="voiceActions"></div>
-            <form class="voice-demo-form" id="voiceForm"><input id="voiceQuestion" type="text" autocomplete="off" maxlength="150" placeholder="Scrivi una domanda (senza dati personali)" aria-label="Domanda per la demo"><button type="submit" data-i18n="voiceSend">Invia</button></form>
-            <button class="voice-audio" type="button" id="voicePlay" data-i18n="voiceListen">▶ Ascolta la risposta</button>
+            <form class="voice-demo-form" id="voiceForm"><input id="voiceQuestion" type="text" autocomplete="off" maxlength="150" placeholder="Descrivi il problema (senza dati personali)" aria-label="Risposta per la simulazione"><button id="voiceMic" type="button" hidden aria-label="Rispondi parlando al microfono" title="Usa il riconoscimento vocale del browser">🎙️</button><button type="submit" data-i18n="voiceSend">Invia</button></form>
+            <button class="voice-audio" type="button" id="voicePlay" aria-pressed="false">▶ Avvia con voce naturale</button>
             <div class="voice-demo-bottom" data-i18n="voiceDemoFoot">È una simulazione con risposte predefinite, non una vera telefonata. Non inserire dati personali o sanitari.</div>
           </div>
         </div>
@@ -275,13 +285,13 @@
     Object.assign(i18n.it,{
       navVoice:'Centralino AI',voiceLabel:'SERVIZI DIGITALI / INNOVA VOICE',voiceTitle:"Tu lavori.<br><span>Alle chiamate pensa l'AI.</span>",
       voiceLead:"Il nostro centralino intelligente risponde alle richieste quando sei occupato o fuori orario, raccoglie le informazioni essenziali e le passa al tuo team. Il servizio si configura per ogni attività.",
-      voiceCat1:'Studi dentistici',voiceCat2:'Fisioterapia',voiceCat3:'Centri estetici',voiceCat4:'Agenzie immobiliari',voiceCat5:'Officine',
+      voiceCat1:'Studi dentistici',voiceCat2:'Fisioterapia',voiceCat3:'Centri estetici',voiceCat4:'Agenzie immobiliari',voiceCat5:'Officine',voiceCat6:'Idraulici',voiceLiveSample:'Idraulico · chiamata simulata con domande specifiche',
       voiceHowTitle:'Un assistente, tre compiti concreti.',voiceStep1:'Risponde e si presenta chiaramente come assistente AI.',
       voiceStep2:'Fornisce informazioni approvate, raccoglie richieste e può trasferire la chiamata quando è disponibile un operatore.',
       voiceStep3:"Invia un riepilogo. Gli appuntamenti reali richiedono un'integrazione con il calendario.",
       voiceNote:'Progetto di Innova Group Service · Cuneo. Italiano e francese configurabili. La demo accanto è una simulazione: nessuna chiamata reale viene effettuata.',
-      voiceDemoTitle:'Prova il centralino AI',voiceDemoSub:'Simulazione guidata · nessun dato inviato',voiceSend:'Invia',voiceListen:'▶ Ascolta la risposta',
-      voiceDemoFoot:'È una simulazione con risposte predefinite, non una vera telefonata. Non inserire dati personali o sanitari.',
+      voiceDemoTitle:'Prova il centralino AI',voiceDemoSub:'Prova una chiamata: domande su problema, urgenza e ricontatto',voiceSend:'Invia',voiceListen:'▶ Ascolta la risposta',
+      voiceDemoFoot:'Demo interattiva con logica guidata e voce registrata, non una telefonata reale. Nessuna richiesta viene inviata. Non inserire indirizzi completi, telefoni o dati sensibili. Il microfono usa il riconoscimento vocale del browser.',
       voiceRoiTitle:'Quanto può valere una chiamata persa?',voiceRoiSub:'Prova una simulazione: non è una previsione dei tuoi ricavi.',
       voiceCallsLabel:'Chiamate perse a settimana',voiceTicketLabel:'Valore medio di un appuntamento',
       voiceResultLabel:'Opportunità mensile ipotetica (15% di conversione)',
@@ -296,13 +306,13 @@
     Object.assign(i18n.fr,{
       navVoice:'Standard IA',voiceLabel:'SERVICES NUMÉRIQUES / INNOVA VOICE',voiceTitle:"Vous travaillez.<br><span>L'IA répond aux appels.</span>",
       voiceLead:"Notre standard intelligent répond lorsque vous êtes occupé ou après la fermeture, recueille les demandes et transmet les informations utiles à votre équipe. Le service est configuré pour chaque activité.",
-      voiceCat1:'Cabinets dentaires',voiceCat2:'Kinésithérapie',voiceCat3:'Instituts de beauté',voiceCat4:'Agences immobilières',voiceCat5:'Garages',
+      voiceCat1:'Cabinets dentaires',voiceCat2:'Kinésithérapie',voiceCat3:'Instituts de beauté',voiceCat4:'Agences immobilières',voiceCat5:'Garages',voiceCat6:'Plombiers',voiceLiveSample:'Plombier · simulation guidée avec questions précises',
       voiceHowTitle:'Un assistant, trois missions concrètes.',voiceStep1:"Il répond et s'identifie clairement comme assistant IA.",
       voiceStep2:'Il communique les informations validées, recueille les demandes et peut transférer les appels à une personne disponible.',
       voiceStep3:"Il transmet un résumé. Les véritables rendez-vous nécessitent une connexion à l'agenda.",
       voiceNote:"Un projet d'Innova Group Service · Coni. Italien et français configurables. Il s'agit d'une simulation, sans appel réel.",
-      voiceDemoTitle:'Essayez le standard IA',voiceDemoSub:'Simulation guidée · aucune donnée envoyée',voiceSend:'Envoyer',voiceListen:'▶ Écouter la réponse',
-      voiceDemoFoot:"Simulation avec réponses prédéfinies, sans appel téléphonique réel. N'entrez aucune donnée personnelle ou médicale.",
+      voiceDemoTitle:'Essayez le standard IA',voiceDemoSub:'Simulation d’appel : problème, urgence et rappel',voiceSend:'Envoyer',voiceListen:'▶ Écouter la réponse',
+      voiceDemoFoot:"Simulation interactive avec réponses guidées, sans appel réel ni envoi. Ne saisissez pas de coordonnées personnelles ou de données sensibles. Le microphone utilise la reconnaissance vocale du navigateur.",
       voiceRoiTitle:'Que peut représenter un appel manqué ?',voiceRoiSub:"Une simulation indicative, pas une prévision de chiffre d'affaires.",
       voiceCallsLabel:'Appels manqués par semaine',voiceTicketLabel:"Valeur moyenne d'un rendez-vous",
       voiceResultLabel:'Opportunité mensuelle hypothétique (15 % de conversion)',
@@ -373,40 +383,240 @@
         ]}
       }
     };
-    let activeVoiceSector='dental',lastVoiceAnswer='';
-    function voiceLanguage(){return document.documentElement.lang==='fr'?'fr':'it'}
+
+    const plumberCopy={
+      it:{
+        hello:"Buongiorno, ha chiamato Idraulica Esempio. Sono Giulia, l'assistente virtuale. Mi racconta che problema ha in casa? La ascolto.",
+        clarifyLeak:"Capisco. Mi dice da dove perde l'acqua? Dal lavandino, dal rubinetto oppure da un tubo? E sta ancora uscendo?",
+        clarifyDrain:"Va bene. È uno scarico intasato oppure l'acqua non arriva proprio? Il problema riguarda il bagno o la cucina?",
+        clarifyBoiler:"Capisco. La caldaia non si accende, perde acqua, oppure compare un codice di errore sul display?",
+        clarifyOther:"Capisco. Mi dice in quale stanza si trova il problema e da quanto tempo succede?",
+        urgency:"Grazie, ho capito. È una situazione urgente, per esempio con acqua che continua a uscire, oppure l'intervento può aspettare?",
+        location:"Mi dice in quale comune serve l'intervento? Per questa prova basta il comune, senza indicare l'indirizzo completo.",
+        callback:"Perfetto. Quando preferirebbe essere richiamato? Appena possibile, questo pomeriggio oppure domani?",
+        finish:"Perfetto, ho annotato la richiesta. Un tecnico potrà ricontattarla per verificare la disponibilità. Questa è una dimostrazione, quindi non parte nessuna richiesta reale.",
+        gas:"Se sente odore di gas, non tocchi interruttori o apparecchi elettrici. Si allontani subito e chiami i soccorsi da un luogo sicuro. Non aspetti un ricontatto.",
+        repeatProblem:"Mi aiuta a capire meglio? Si tratta di una perdita d'acqua, di uno scarico intasato, della caldaia o di un altro problema?",
+        chipsProblem:["Perde acqua dal lavandino","Scarico del bagno intasato","La caldaia non si accende","Sento odore di gas"],
+        chipsLeak:["Perde sotto il lavandino e gocciola","Esce acqua da un tubo","Perde dal rubinetto"],
+        chipsDrain:["Lo scarico della cucina è bloccato","Il WC non scarica","L'acqua non arriva in bagno"],
+        chipsBoiler:["La caldaia non parte","Sul display appare un errore","Non arriva acqua calda"],
+        chipsOther:["In bagno, da stamattina","In cucina, da ieri","Perde acqua da un tubo"],
+        chipsUrgency:["È urgente, esce ancora acqua","Non è urgente, può aspettare"],
+        chipsLocation:["Cuneo","Alba","Torino"],
+        chipsCallback:["Appena possibile","Oggi pomeriggio","Domani"],
+        done:"Ricomincia la chiamata",
+        status:"Idraulico · la demo raccoglie problema, urgenza e zona",
+        voiceStart:"▶ Avvia con voce femminile naturale",
+        voiceOn:"🔊 Voce femminile attiva · disattiva",
+        emergency:"La simulazione si interrompe: in caso di possibile fuga di gas, chiami i soccorsi da un luogo sicuro.",
+        summaryTitle:"RIEPILOGO DELLA CHIAMATA (SIMULAZIONE)",
+        summaryDisclaimer:"Nessuna richiesta inviata e nessun recapito registrato.",
+        issue:"Problema",details:"Dettagli",priority:"Urgenza",town:"Comune",reach:"Ricontatto",
+        urgentYes:"URGENTE",urgentNo:"Non urgente",urgentUnknown:"Da valutare"
+      },
+      fr:{
+        hello:"Bonjour, vous êtes chez Plomberie Exemple. Je suis Giulia, l'assistante virtuelle. Pouvez-vous m'expliquer le problème ?",
+        clarifyLeak:"D'où vient la fuite : sous l'évier, du robinet ou d'un tuyau ? L'eau coule-t-elle encore ?",
+        clarifyDrain:"Un évier est-il bouché ou l'eau ne coule-t-elle plus ? Cela concerne la cuisine ou la salle de bain ?",
+        clarifyBoiler:"La chaudière ne démarre-t-elle pas, fuit-elle ou affiche-t-elle un code d'erreur ?",
+        clarifyOther:"Dans quelle pièce avez-vous ce problème, et depuis quand ?",
+        urgency:"Est-ce urgent, avec de l'eau qui coule maintenant, ou l'intervention peut-elle attendre ?",
+        location:"Dans quelle commune faut-il intervenir ? Pour la démo, indiquez seulement la commune.",
+        callback:"Quand souhaitez-vous être rappelé : au plus vite, cet après-midi ou demain ?",
+        finish:"Votre demande est notée. Un professionnel pourra vous rappeler pour vérifier ses disponibilités. C'est une démonstration : aucune demande n'est envoyée.",
+        gas:"En cas d'odeur de gaz, ne touchez pas aux interrupteurs. Éloignez-vous et appelez les secours depuis un lieu sûr.",
+        repeatProblem:"Pouvez-vous préciser : fuite d'eau, évacuation bouchée, chaudière ou autre problème ?",
+        chipsProblem:["Fuite sous l'évier","Évacuation bouchée","Chaudière en panne","Odeur de gaz"],
+        chipsLeak:["L'eau coule encore","Fuite sous l'évier","Un tuyau fuit"],
+        chipsDrain:["Évier de cuisine bouché","WC bouchés","Plus d'eau dans la salle de bain"],
+        chipsBoiler:["La chaudière ne démarre pas","Code d'erreur","Pas d'eau chaude"],
+        chipsOther:["Salle de bain depuis ce matin","Cuisine depuis hier","Un tuyau fuit"],
+        chipsUrgency:["Urgent, l'eau coule","Non urgent"],
+        chipsLocation:["Coni","Turin","Alba"],
+        chipsCallback:["Au plus vite","Cet après-midi","Demain"],
+        done:"Recommencer l'appel",status:"Plombier · description, urgence et lieu",
+        voiceStart:"Voix féminine disponible en italien",
+        voiceOn:"Voix féminine disponible en italien",
+        emergency:"La simulation s'arrête : si vous suspectez une fuite de gaz, contactez les secours depuis un lieu sûr.",
+        summaryTitle:"RÉCAPITULATIF DE L'APPEL (SIMULATION)",summaryDisclaimer:"Aucune demande envoyée, aucune coordonnée enregistrée.",
+        issue:"Problème",details:"Précisions",priority:"Urgence",town:"Commune",reach:"Rappel",
+        urgentYes:"URGENT",urgentNo:"Non urgent",urgentUnknown:"À confirmer"
+      }
+    };
+    const femaleVoiceGreeting="https://resource2.heygen.ai/text_to_speech/01b6ee8dce684536a36155626c986a28/1776ddbd05374fa480e92f0297bbc67e/id=6b33c29f-f989-46dc-a9f9-66f2368831a7.wav";
+    const femaleVoiceSprite="https://resource2.heygen.ai/text_to_speech/01b6ee8dce684536a36155626c986a28/1776ddbd05374fa480e92f0297bbc67e/id=e5d8b005-163f-42d2-9114-2fa8f4f8795e.wav";
+    const femaleVoiceSegments={"clarifyLeak":[0.19,8.99],"clarifyDrain":[9.13,17.45],"clarifyBoiler":[17.49,24.91],"clarifyOther":[24.96,30.36],"urgency":[30.4,40.53],"location":[40.57,49.65],"callback":[49.73,57.45],"finish":[57.51,69.11],"gas":[69.15,79.14],"repeatProblem":[79.18,88.08]};
+    let activeVoiceSector="plumber",lastVoiceAnswer="",lastVoiceKey="greeting";
+    let plumberStage="problem",plumberInfo={},voiceAudioEnabled=false,voiceAudio=null,voiceSegmentEnd=null,voiceSpeechRecognition=null;
+    const voicePlayerButton=document.getElementById("voicePlay");
+    const voiceMicButton=document.getElementById("voiceMic");
+    const VoiceRecognizer=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(VoiceRecognizer){voiceMicButton.hidden=false}
+    function voiceLanguage(){return document.documentElement.lang==="fr"?"fr":"it"}
+    function normalizedPlumber(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
     function voiceBubble(role,content){
-      const box=document.createElement('div');box.className='voice-bubble '+role;box.textContent=content;
-      const chat=document.getElementById('voiceChat');chat.appendChild(box);chat.scrollTop=chat.scrollHeight;
+      const box=document.createElement("div");box.className="voice-bubble "+role;box.textContent=content;
+      const chat=document.getElementById("voiceChat");chat.appendChild(box);chat.scrollTop=chat.scrollHeight;
     }
-    function renderVoice(){
-      const lang=voiceLanguage(),data=voiceScenarios[lang][activeVoiceSector];
-      document.getElementById('voiceChat').replaceChildren();
-      document.querySelectorAll('[data-voice-sector]').forEach(btn=>btn.setAttribute('aria-selected',String(btn.dataset.voiceSector===activeVoiceSector)));
-      document.getElementById('voiceQuestion').placeholder=lang==='fr'?"Écrivez une question (sans données personnelles)":"Scrivi una domanda (senza dati personali)";
-      lastVoiceAnswer=data.hello;voiceBubble('bot',data.hello);
-      const choices=document.getElementById('voiceActions');choices.replaceChildren();
-      data.options.forEach(([question,answer])=>{
-        const button=document.createElement('button');button.type='button';button.textContent=question;
-        button.addEventListener('click',()=>voiceAnswer(question,answer));choices.appendChild(button);
+    function voiceChoices(questions){
+      const el=document.getElementById("voiceActions");el.replaceChildren();
+      questions.forEach(q=>{
+        const button=document.createElement("button");button.type="button";button.textContent=q;
+        button.addEventListener("click",()=>voiceSubmit(q));el.appendChild(button);
       });
     }
-    function voiceAnswer(question,answer){
-      voiceBubble('client',question);voiceBubble('bot',answer);lastVoiceAnswer=answer;
+    function stopVoiceAudio(){
+      if(voiceAudio){voiceAudio.pause();voiceAudio.removeAttribute("src");voiceAudio.load();voiceAudio=null}
+      voiceSegmentEnd=null;
     }
-    document.querySelectorAll('[data-voice-sector]').forEach(btn=>btn.addEventListener('click',()=>{
-      activeVoiceSector=btn.dataset.voiceSector; if('speechSynthesis' in window)window.speechSynthesis.cancel();renderVoice();
-    }));
-    document.getElementById('voiceForm').addEventListener('submit',event=>{
-      event.preventDefault();const input=document.getElementById('voiceQuestion');
-      const question=input.value.trim().slice(0,150);if(!question)return;input.value='';
+    function playFemaleVoice(key){
+      if(!voiceAudioEnabled||activeVoiceSector!=="plumber"||voiceLanguage()!=="it")return;
+      stopVoiceAudio();
+      const segment=femaleVoiceSegments[key];
+      const audio=new Audio(key==="greeting"?femaleVoiceGreeting:femaleVoiceSprite);
+      audio.preload="auto";voiceAudio=audio;
+      if(segment){
+        audio.addEventListener("loadedmetadata",()=>{
+          if(voiceAudio!==audio)return;
+          audio.currentTime=segment[0];
+          audio.play().catch(()=>{voicePlayerButton.title="Avvio audio non riuscito: premi di nuovo il pulsante";});
+        },{once:true});
+        audio.addEventListener("timeupdate",()=>{
+          if(voiceAudio===audio&&audio.currentTime>=voiceSegmentEnd){audio.pause();}
+        });
+        voiceSegmentEnd=segment[1];
+        audio.load();
+      }else{
+        audio.play().catch(()=>{voicePlayerButton.title="Avvio audio non riuscito: premi di nuovo il pulsante";});
+      }
+    }
+    function setVoiceControls(){
+      const enabled=activeVoiceSector==="plumber"&&voiceLanguage()==="it";
+      voicePlayerButton.hidden=!enabled;
+      voicePlayerButton.textContent=voiceAudioEnabled?plumberCopy.it.voiceOn:plumberCopy.it.voiceStart;
+      voicePlayerButton.setAttribute("aria-pressed",String(voiceAudioEnabled&&enabled));
+      const status=document.querySelector(".voice-demo-status span:last-child");
+      if(status)status.textContent=activeVoiceSector==="plumber"?plumberCopy[voiceLanguage()].status:(voiceLanguage()==="fr"?"Autres secteurs : scénarios textuels":"Altri settori: scenari testuali");
+    }
+    function plumberSay(text,key){
+      voiceBubble("bot",text);lastVoiceAnswer=text;lastVoiceKey=key;
+      if(key)playFemaleVoice(key);
+    }
+    function plumberIssueCategory(raw){
+      const s=normalizedPlumber(raw);
+      if(/caldaia|scaldabagno|acqua calda|termosifon|radiator|chaudiere/.test(s))return"boiler";
+      if(/intas|scaric|otturat|bloccato|sifon|bouch|evacuat|wc/.test(s))return"drain";
+      if(/perd|gocci|allag|fuoriusc|perte|fuite|perde|tubo|rubinett|lavandin|evier/.test(s))return"leak";
+      return"other";
+    }
+    function plumberReply(raw){
+      const copy=plumberCopy[voiceLanguage()];
+      const answer=raw.trim().slice(0,150);if(!answer)return;
+      voiceBubble("client",answer);
+      const safe=normalizedPlumber(answer);
+      if(/(^|\W)(gas|metano|gaz)(\W|$)/.test(safe)){
+        plumberStage="emergency";plumberSay(copy.gas,"gas");voiceBubble("bot",copy.emergency);
+        voiceChoices([copy.done]);return;
+      }
+      if(plumberStage==="done"||plumberStage==="emergency"){startPlumberDemo();return;}
+      if(plumberStage==="problem"){
+        plumberInfo.issue=answer;
+        const category=plumberIssueCategory(answer);
+        plumberInfo.category=category;
+        plumberStage="details";
+        const key=category==="leak"?"clarifyLeak":category==="drain"?"clarifyDrain":category==="boiler"?"clarifyBoiler":"clarifyOther";
+        plumberSay(copy[key],key);
+        voiceChoices(copy[category==="leak"?"chipsLeak":category==="drain"?"chipsDrain":category==="boiler"?"chipsBoiler":"chipsOther"]);
+      }else if(plumberStage==="details"){
+        plumberInfo.details=answer;
+        plumberStage="urgency";plumberSay(copy.urgency,"urgency");voiceChoices(copy.chipsUrgency);
+      }else if(plumberStage==="urgency"){
+        const negated=/non urgent|non e urgent|puo aspett|nessuna fretta|pas urgent|peut attendre|domani/.test(safe);
+        const isUrgent=/urgent|subito|immediat|adesso|esce ancora|allag|sort encore|tout de suite/.test(safe);
+        plumberInfo.priority=negated?copy.urgentNo:isUrgent?copy.urgentYes:copy.urgentUnknown;
+        plumberStage="location";plumberSay(copy.location,"location");voiceChoices(copy.chipsLocation);
+      }else if(plumberStage==="location"){
+        plumberInfo.town=answer;
+        plumberStage="callback";plumberSay(copy.callback,"callback");voiceChoices(copy.chipsCallback);
+      }else if(plumberStage==="callback"){
+        plumberInfo.callback=answer;
+        plumberStage="done";plumberSay(copy.finish,"finish");
+        const lines=[
+          copy.summaryTitle,
+          copy.issue+": "+(plumberInfo.issue||"-"),
+          copy.details+": "+(plumberInfo.details||"-"),
+          copy.priority+": "+(plumberInfo.priority||"-"),
+          copy.town+": "+(plumberInfo.town||"-"),
+          copy.reach+": "+(plumberInfo.callback||"-"),
+          "",
+          copy.summaryDisclaimer
+        ];
+        const box=document.createElement("div");box.className="voice-summary";box.textContent=lines.join("\n");
+        document.getElementById("voiceChat").appendChild(box);box.scrollIntoView({block:"nearest",behavior:"smooth"});
+        voiceChoices([copy.done]);
+      }
+    }
+    function startPlumberDemo(){
+      plumberStage="problem";plumberInfo={};
+      const copy=plumberCopy[voiceLanguage()];
+      document.getElementById("voiceChat").replaceChildren();
+      lastVoiceAnswer=copy.hello;lastVoiceKey="greeting";voiceBubble("bot",copy.hello);
+      voiceChoices(copy.chipsProblem);
+      setVoiceControls();
+    }
+    function renderVoice(){
+      stopVoiceAudio();voiceAudioEnabled=false;
       const lang=voiceLanguage(),data=voiceScenarios[lang][activeVoiceSector];
-      const chosen=data.options.find(opt=>opt[2].split('|').some(word=>question.toLowerCase().includes(word)));
-      voiceAnswer(question,chosen?chosen[1]:lang==='fr'?"Dans cette simulation, je peux répondre aux questions proposées ci-dessus.":"In questa demo posso rispondere alle domande suggerite qui sopra.");
+      document.querySelectorAll("[data-voice-sector]").forEach(btn=>btn.setAttribute("aria-selected",String(btn.dataset.voiceSector===activeVoiceSector)));
+      const input=document.getElementById("voiceQuestion");
+      input.placeholder=lang==="fr"?"Décrivez le problème (sans données personnelles)":"Descrivi il problema (senza dati personali)";
+      input.value="";
+      if(activeVoiceSector==="plumber"){startPlumberDemo();return}
+      document.getElementById("voiceChat").replaceChildren();
+      lastVoiceAnswer=data.hello;lastVoiceKey="";
+      voiceBubble("bot",data.hello);
+      voiceChoices(data.options.map(opt=>opt[0]));
+      setVoiceControls();
+    }
+    function voiceSubmit(raw){
+      const question=raw.trim().slice(0,150);if(!question)return;
+      if(activeVoiceSector==="plumber"){
+        if((plumberStage==="done"||plumberStage==="emergency")&&question===plumberCopy[voiceLanguage()].done){startPlumberDemo();return}
+        plumberReply(question);return;
+      }
+      const lang=voiceLanguage(),data=voiceScenarios[lang][activeVoiceSector];
+      const selected=data.options.find(opt=>opt[0]===question||opt[2].split("|").some(word=>normalizedPlumber(question).includes(normalizedPlumber(word))));
+      voiceBubble("client",question);
+      const answer=selected?selected[1]:(lang==="fr"?"Dans cette démo, je peux répondre aux questions proposées ci-dessus.":"Questa demo risponde alle richieste suggerite qui sopra.");
+      voiceBubble("bot",answer);lastVoiceAnswer=answer;
+    }
+    document.querySelectorAll("[data-voice-sector]").forEach(btn=>btn.addEventListener("click",()=>{
+      activeVoiceSector=btn.dataset.voiceSector;
+      renderVoice();
+    }));
+    document.getElementById("voiceForm").addEventListener("submit",event=>{
+      event.preventDefault();const input=document.getElementById("voiceQuestion");
+      const question=input.value;input.value="";voiceSubmit(question);
     });
-    document.getElementById('voicePlay').addEventListener('click',()=>{
-      if(!('speechSynthesis' in window))return;
-      window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(lastVoiceAnswer);u.lang=voiceLanguage()==='fr'?'fr-FR':'it-IT';window.speechSynthesis.speak(u);
+    voicePlayerButton.addEventListener("click",()=>{
+      if(activeVoiceSector!=="plumber"||voiceLanguage()!=="it")return;
+      voiceAudioEnabled=!voiceAudioEnabled;
+      if(voiceAudioEnabled){playFemaleVoice(lastVoiceKey)}else{stopVoiceAudio()}
+      setVoiceControls();
+    });
+    voiceMicButton.addEventListener("click",()=>{
+      if(!VoiceRecognizer)return;
+      if(voiceSpeechRecognition){voiceSpeechRecognition.stop();return}
+      const recognition=new VoiceRecognizer();voiceSpeechRecognition=recognition;
+      recognition.lang=voiceLanguage()==="fr"?"fr-FR":"it-IT";recognition.interimResults=false;recognition.maxAlternatives=1;
+      recognition.onresult=event=>{
+        const heard=event.results&&event.results[0]&&event.results[0][0]?event.results[0][0].transcript:"";
+        if(heard)voiceSubmit(heard);
+      };
+      recognition.onerror=()=>{voiceMicButton.title="Microfono non disponibile: puoi scrivere la risposta."};
+      recognition.onend=()=>{voiceSpeechRecognition=null;voiceMicButton.classList.remove("listening")};
+      try{recognition.start();voiceMicButton.classList.add("listening")}catch(e){voiceSpeechRecognition=null}
     });
     function updateVoiceRoi(){
       const calls=Number(document.getElementById('voiceCalls').value);
@@ -418,7 +628,7 @@
     }
     ['voiceCalls','voiceTicket'].forEach(id=>document.getElementById(id).addEventListener('input',updateVoiceRoi));
     document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>{
-      if('speechSynthesis' in window)window.speechSynthesis.cancel();renderVoice();updateVoiceRoi();
+      renderVoice();updateVoiceRoi();
     }));
 
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
