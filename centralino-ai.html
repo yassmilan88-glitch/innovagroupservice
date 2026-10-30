@@ -185,7 +185,45 @@
 .detail-page.partner-detail .partners,.detail-page.partner-detail .contact{display:block}
 @media(max-width:1150px){.nav-links{display:none;position:absolute;top:88px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 20px 20px;background:#152638;box-shadow:0 20px 40px #0c18268a}.nav-links.open{display:flex}.nav-links a{padding:13px;border-bottom:1px solid #ffffff15}.mobile-menu{display:block;padding:8px;font-size:24px}}
 @media(max-width:760px){.nav-links{top:76px}}
-</style>
+
+    /* Innova Voice - first-stage lead acquisition, isolated to the service page */
+    .iv-entrybar{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:19px 23px;margin:4px 0 29px;border:1px solid #ffffff35;background:#ffffff0a}
+    .iv-entrybar p{font-size:13px;line-height:1.6;color:#c6d8e2;margin:4px 0 0;max-width:600px}
+    .iv-entrybar strong{font:800 17px 'Manrope',sans-serif}
+    .iv-entry-buttons{display:flex;gap:10px;flex-wrap:wrap}
+    .iv-entry-buttons button,.iv-entry-buttons a{min-height:44px;padding:12px 16px;border:1px solid #ff9573;background:#f1663b;color:white;font-size:12px;font-weight:800;cursor:pointer;text-align:center}
+    .iv-entry-buttons a{background:transparent;color:#fff;border-color:#ffffff70}
+    .iv-entry-buttons button:hover,.iv-entry-buttons a:hover{filter:brightness(1.14)}
+    .iv-lead{display:grid;grid-template-columns:.78fr 1.22fr;gap:42px;margin:80px 0 18px;padding:38px;border:1px solid #ffffff30;background:#0d2030;scroll-margin-top:28px}
+    .iv-lead-copy h3{font:800 clamp(27px,3.4vw,42px)/1.12 'Manrope',sans-serif;letter-spacing:-.045em;margin:0 0 15px}
+    .iv-lead-copy h3 span{color:#ff9c7f}
+    .iv-lead-copy p{color:#bacbd6;line-height:1.8;font-size:14px}
+    .iv-lead-points{margin:22px 0 0;padding:0;list-style:none}
+    .iv-lead-points li{display:flex;gap:10px;align-items:start;color:#dae6eb;font-size:13px;line-height:1.6;margin-top:14px}
+    .iv-lead-points li:before{content:"✓";color:#ff9774;font-weight:900}
+    .iv-lead-form{background:#f5f7f5;color:#192b39;padding:25px;border-radius:8px}
+    .iv-lead-form>h4{font:800 19px 'Manrope',sans-serif;margin:0 0 18px}
+    .iv-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .iv-fields label{font-size:12px;font-weight:800;color:#284151;display:block;line-height:1.5}
+    .iv-fields label.iv-wide{grid-column:1/-1}
+    .iv-fields input,.iv-fields select,.iv-fields textarea{display:block;width:100%;font:500 14px 'DM Sans',sans-serif;color:#152a39;background:#fff;border:1px solid #c9d4d2;border-radius:4px;padding:12px;margin-top:7px;min-height:44px}
+    .iv-fields textarea{min-height:80px;resize:vertical}
+    .iv-fields input:focus,.iv-fields select:focus,.iv-fields textarea:focus{outline:2px solid #e88261;outline-offset:1px}
+    .iv-form-hint{font-size:11px;color:#5c6f7a;line-height:1.6;margin:14px 0 0}
+    .iv-privacy{font-size:11px;line-height:1.65;color:#4f6470;border-top:1px solid #d5dfdc;margin:16px 0;padding:13px 0}
+    .iv-privacy summary{cursor:pointer;font-weight:800;color:#28475b}
+    .iv-privacy p{margin:10px 0 0}
+    .iv-consent{display:flex!important;align-items:start;gap:9px;font-size:11px!important;font-weight:600!important;line-height:1.6!important;color:#354d5d!important;margin:0 0 15px}
+    .iv-consent input{width:16px;height:16px;flex:none;accent-color:#e86d47;margin:1px 0 0}
+    .iv-lead-submit{display:flex;align-items:center;justify-content:center;gap:12px;background:#ed6e49;border:0;color:#fff;padding:15px 20px;width:100%;font:800 13px 'Manrope',sans-serif;cursor:pointer;min-height:48px}
+    .iv-lead-submit:disabled{opacity:.55;cursor:wait}
+    .iv-lead-status{font-size:12px;line-height:1.65;margin:12px 0 0;min-height:18px;color:#315868}
+    .iv-lead-status[data-state="error"]{color:#a62e1e}
+    .iv-lead-status[data-state="success"]{color:#21634c}
+    .iv-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    @media(max-width:920px){.iv-lead{grid-template-columns:1fr;gap:22px}}
+    @media(max-width:680px){.iv-entrybar{align-items:stretch;flex-direction:column;padding:18px}.iv-entry-buttons{flex-direction:column}.iv-entry-buttons button,.iv-entry-buttons a{width:100%}.iv-lead{margin-top:55px;padding:16px;gap:19px}.iv-lead-form{padding:17px}.iv-fields{grid-template-columns:1fr}.iv-fields label.iv-wide{grid-column:auto}}
+  </style>
 </head>
 <body class="detail-page voice-detail">
   <header class="site-header">
@@ -240,6 +278,10 @@
           <p class="voice-lead" data-i18n="voiceLead">Il nostro centralino intelligente risponde alle richieste quando sei occupato o fuori orario, raccoglie le informazioni essenziali e le passa al tuo team. Il servizio si configura per ogni attività.</p>
         </div>
         <div class="voice-tags"><span data-i18n="voiceCat6">Idraulici</span><span data-i18n="voiceCat1">Studi dentistici</span><span data-i18n="voiceCat2">Fisioterapia</span><span data-i18n="voiceCat3">Centri estetici</span><span data-i18n="voiceCat4">Agenzie immobiliari</span><span data-i18n="voiceCat5">Officine</span></div>
+        <div class="iv-entrybar">
+          <div><strong data-i18n="ivEntryTitle">Ascolta Giulia. Poi immaginala al tuo telefono.</strong><p data-i18n="ivEntryDesc">Prima prova la voce femminile nella simulazione. Se vuoi, prepariamo una demo con il nome della tua attività.</p></div>
+          <div class="iv-entry-buttons"><button type="button" id="ivTryVoice" data-i18n="ivEntryTry">▶ Prova Giulia con la voce</button><a href="#voice-lead-form" data-i18n="ivEntryCustom">Richiedi demo su misura</a></div>
+        </div>
         <div class="voice-grid">
           <div class="voice-value">
             <h3 data-i18n="voiceHowTitle">Un assistente, tre compiti concreti.</h3>
@@ -348,6 +390,57 @@
             <details><summary><span data-i18n="voiceFaqQ5">Come vengono gestiti i dati dei chiamanti?</span><span aria-hidden="true">+</span></summary><p data-i18n="voiceFaqA5">Prima dell'attivazione definiamo informativa, dati strettamente necessari, accessi, eventuali registrazioni, conservazione e fornitori coinvolti. La demo pubblica non invia richieste reali.</p></details>
             <details><summary><span data-i18n="voiceFaqQ6">Posso ascoltare una demo con il nome della mia attività?</span><span aria-hidden="true">+</span></summary><p data-i18n="voiceFaqA6">Sì, raccontaci il settore e le domande che ricevi più spesso. Possiamo preparare una prova guidata personalizzata prima di definire un'eventuale attivazione.</p></details>
           </div>
+        </div>
+
+        <div class="iv-lead" id="voice-lead-form">
+          <div class="iv-lead-copy">
+            <span class="voice-eyebrow" data-i18n="ivLeadKicker">IL PROSSIMO PASSO</span>
+            <h3 data-i18n-html="ivLeadTitle">Facciamo rispondere Giulia <span>per la tua attività.</span></h3>
+            <p data-i18n="ivLeadDesc">Raccontaci cosa fai e come ricevi le chiamate. Ti contattiamo per preparare una prova guidata con il nome della tua impresa e le domande tipiche dei tuoi clienti.</p>
+            <ul class="iv-lead-points">
+              <li data-i18n="ivLeadPoint1">Demo personalizzata, senza impegno di acquisto</li>
+              <li data-i18n="ivLeadPoint2">Confronto su orari, urgenze e chiamate perse</li>
+              <li data-i18n="ivLeadPoint3">Preventivo solo dopo aver definito le esigenze</li>
+            </ul>
+          </div>
+          <form class="iv-lead-form" id="innovaVoiceLeadForm" name="innova-voice-demo" action="/centralino-ai.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="innova-voice-demo">
+            <input type="hidden" name="provenienza" value="centralino-ai">
+            <div class="iv-honeypot" aria-hidden="true"><label>Non compilare<input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></div>
+            <h4 data-i18n="ivFormTitle">Richiedi la tua demo</h4>
+            <div class="iv-fields">
+              <label><span data-i18n="ivName">Il tuo nome *</span><input type="text" name="nome" maxlength="80" autocomplete="name" required></label>
+              <label><span data-i18n="ivCompany">Nome attività *</span><input type="text" name="azienda" maxlength="120" autocomplete="organization" required></label>
+              <label><span data-i18n="ivSector">Settore *</span>
+                <select name="settore" required>
+                  <option value="" data-i18n="ivChoose">Seleziona</option>
+                  <option value="artigianato" data-i18n="ivSectorTrade">Idraulica / artigianato</option>
+                  <option value="officina" data-i18n="ivSectorGarage">Officina / auto</option>
+                  <option value="studio" data-i18n="ivSectorOffice">Studio professionale</option>
+                  <option value="immobiliare" data-i18n="ivSectorEstate">Immobiliare</option>
+                  <option value="altro" data-i18n="ivSectorOther">Altro</option>
+                </select>
+              </label>
+              <label><span data-i18n="ivTime">Fascia per ricontatto</span>
+                <select name="fascia">
+                  <option value="indifferente" data-i18n="ivTimeAny">Indifferente</option>
+                  <option value="mattina" data-i18n="ivTimeMorning">Mattina</option>
+                  <option value="pomeriggio" data-i18n="ivTimeAfternoon">Pomeriggio</option>
+                </select>
+              </label>
+              <label><span data-i18n="ivEmail">Email *</span><input type="email" name="email" maxlength="160" autocomplete="email" required></label>
+              <label><span data-i18n="ivPhone">Cellulare (facoltativo)</span><input type="tel" name="telefono" maxlength="35" autocomplete="tel"></label>
+              <label class="iv-wide"><span data-i18n="ivNotes">Quali chiamate vorresti gestire?</span><textarea name="richiesta" maxlength="400" rows="3" data-i18n-placeholder="ivNotesPlaceholder" placeholder="Es. interventi urgenti, appuntamenti, informazioni sugli orari…"></textarea></label>
+            </div>
+            <p class="iv-form-hint" data-i18n="ivNoSensitive">Non inserire dati di tuoi clienti, informazioni sanitarie o altri dati sensibili.</p>
+            <details class="iv-privacy">
+              <summary data-i18n="ivPrivacyTitle">Informazioni sul trattamento dei dati</summary>
+              <p data-i18n="ivPrivacyText">Titolare: Innova Group Service SRL (info@innovagroupservice.eu). Useremo i dati inviati per rispondere alla tua richiesta e organizzare una demo; base giuridica: misure precontrattuali richieste dall'interessato. I dati sono gestiti tramite il servizio moduli di Netlify e saranno conservati per il tempo necessario a gestire la richiesta, nel rispetto degli obblighi applicabili. Non li useremo per inviare marketing senza una base giuridica distinta. Puoi chiedere accesso, rettifica, cancellazione e informazioni sui tuoi diritti scrivendo all'indirizzo indicato. Le informazioni complete su conservazione, fornitori e trasferimenti devono essere finalizzate prima dell'utilizzo commerciale su larga scala.</p>
+            </details>
+            <label class="iv-consent"><input type="checkbox" name="informativa_letta" value="si" required><span data-i18n="ivConsentText">Ho letto le informazioni sul trattamento dei dati per questa richiesta. *</span></label>
+            <button class="iv-lead-submit" type="submit" id="ivLeadSubmit"><span data-i18n="ivSubmitText">Richiedi una demo gratuita</span><span aria-hidden="true">↗</span></button>
+            <p class="iv-lead-status" id="ivLeadStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
         <div class="voice-cta"><p data-i18n="voiceCtaText">Siamo di Cuneo e seguiamo le attività in tutto il Piemonte. Facciamo una demo su misura per la tua realtà.</p><a class="btn btn-primary" href="https://wa.me/393295865883?text=Ciao%20Innova%2C%20vorrei%20vedere%20una%20demo%20del%20centralino%20AI%20per%20la%20mia%20attivit%C3%A0." target="_blank" rel="noopener noreferrer"><span data-i18n="voiceCta">Vediamolo su WhatsApp</span><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11"/></svg></a></div>
       </div>
@@ -905,6 +998,91 @@
     ['voiceCalls','voiceTicket'].forEach(id=>document.getElementById(id).addEventListener('input',updateVoiceRoi));
     document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>{
       renderVoice();updateVoiceRoi();
+    }));
+
+
+    // Intro voice demo: use the existing, explicitly guided recorded-voice scenario.
+    document.getElementById('ivTryVoice').addEventListener('click',()=>{
+      const tab=document.querySelector('[data-voice-sector="plumber"]');
+      if(tab && activeVoiceSector!=='plumber')tab.click();
+      const demo=document.querySelector('.voice-demo');
+      if(demo)demo.scrollIntoView({behavior:'smooth',block:'center'});
+      if(voiceLanguage()==='it' && !voiceAudioEnabled)voicePlayerButton.click();
+    });
+    // Netlify Forms: static HTML detection with URL-encoded submission and honeypot.
+    const ivLeadForm=document.getElementById('innovaVoiceLeadForm');
+    const ivLeadStatus=document.getElementById('ivLeadStatus');
+    const ivLeadSubmit=document.getElementById('ivLeadSubmit');
+    ivLeadForm.addEventListener('submit',async event=>{
+      event.preventDefault();
+      if(!ivLeadForm.reportValidity())return;
+      ivLeadSubmit.disabled=true;
+      ivLeadStatus.removeAttribute('data-state');
+      ivLeadStatus.textContent=voiceLanguage()==='fr'?'Envoi de votre demande…':'Invio della richiesta…';
+      try{
+        const data=new URLSearchParams(new FormData(ivLeadForm));
+        const response=await fetch(ivLeadForm.action,{
+          method:'POST',
+          body:data.toString(),
+          headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          redirect:'follow',
+          credentials:'same-origin'
+        });
+        if(!response.ok)throw new Error('HTTP '+response.status);
+        ivLeadForm.reset();
+        ivLeadStatus.dataset.state='success';
+        ivLeadStatus.textContent=voiceLanguage()==='fr'?
+          "Merci ! Votre demande a été envoyée. Nous vous contacterons pour organiser la démonstration.":
+          "Richiesta inviata. Grazie! Ti contatteremo per organizzare la demo personalizzata.";
+      }catch(error){
+        ivLeadStatus.dataset.state='error';
+        ivLeadStatus.textContent=voiceLanguage()==='fr'?
+          "L'envoi n'a pas abouti. Écrivez à info@innovagroupservice.eu ou contactez-nous sur WhatsApp.":
+          "Non siamo riusciti a inviare la richiesta. Scrivici a info@innovagroupservice.eu oppure contattaci su WhatsApp.";
+      }finally{ivLeadSubmit.disabled=false;}
+    });
+    Object.assign(i18n.it,{
+      ivEntryTitle:'Ascolta Giulia. Poi immaginala al tuo telefono.',
+      ivEntryDesc:'Prima prova la voce femminile nella simulazione. Se vuoi, prepariamo una demo con il nome della tua attività.',
+      ivEntryTry:'▶ Prova Giulia con la voce',ivEntryCustom:'Richiedi demo su misura',
+      ivLeadKicker:'IL PROSSIMO PASSO',ivLeadTitle:'Facciamo rispondere Giulia <span>per la tua attività.</span>',
+      ivLeadDesc:'Raccontaci cosa fai e come ricevi le chiamate. Ti contattiamo per preparare una prova guidata con il nome della tua impresa e le domande tipiche dei tuoi clienti.',
+      ivLeadPoint1:'Demo personalizzata, senza impegno di acquisto',ivLeadPoint2:'Confronto su orari, urgenze e chiamate perse',
+      ivLeadPoint3:'Preventivo solo dopo aver definito le esigenze',
+      ivFormTitle:'Richiedi la tua demo',ivName:'Il tuo nome *',ivCompany:'Nome attività *',ivSector:'Settore *',
+      ivChoose:'Seleziona',ivSectorTrade:'Idraulica / artigianato',ivSectorGarage:'Officina / auto',ivSectorOffice:'Studio professionale',
+      ivSectorEstate:'Immobiliare',ivSectorOther:'Altro',ivTime:'Fascia per ricontatto',ivTimeAny:'Indifferente',
+      ivTimeMorning:'Mattina',ivTimeAfternoon:'Pomeriggio',ivEmail:'Email *',ivPhone:'Cellulare (facoltativo)',
+      ivNotes:'Quali chiamate vorresti gestire?',ivNotesPlaceholder:'Es. interventi urgenti, appuntamenti, informazioni sugli orari…',
+      ivNoSensitive:'Non inserire dati di tuoi clienti, informazioni sanitarie o altri dati sensibili.',
+      ivPrivacyTitle:'Informazioni sul trattamento dei dati',
+      ivPrivacyText:"Titolare: Innova Group Service SRL (info@innovagroupservice.eu). Useremo i dati inviati per rispondere alla tua richiesta e organizzare una demo; base giuridica: misure precontrattuali richieste dall'interessato. I dati sono gestiti tramite il servizio moduli di Netlify e saranno conservati per il tempo necessario a gestire la richiesta, nel rispetto degli obblighi applicabili. Non li useremo per inviare marketing senza una base giuridica distinta. Puoi chiedere accesso, rettifica, cancellazione e informazioni sui tuoi diritti scrivendo all'indirizzo indicato. Le informazioni complete su conservazione, fornitori e trasferimenti devono essere finalizzate prima dell'utilizzo commerciale su larga scala.",
+      ivConsentText:'Ho letto le informazioni sul trattamento dei dati per questa richiesta. *',
+      ivSubmitText:'Richiedi una demo gratuita'
+    });
+    Object.assign(i18n.fr,{
+      ivEntryTitle:'Écoutez Giulia. Imaginez-la répondre au téléphone.',
+      ivEntryDesc:"Testez d'abord la voix féminine dans la simulation. Nous pouvons ensuite préparer une démo au nom de votre entreprise.",
+      ivEntryTry:'▶ Écouter Giulia (italien)',ivEntryCustom:'Demander une démo sur mesure',
+      ivLeadKicker:'LA PROCHAINE ÉTAPE',ivLeadTitle:'Configurons Giulia <span>pour votre activité.</span>',
+      ivLeadDesc:"Expliquez-nous votre activité et vos appels les plus fréquents. Nous vous contacterons pour organiser une simulation personnalisée.",
+      ivLeadPoint1:"Démo personnalisée, sans obligation d'achat",ivLeadPoint2:'Échange sur les horaires, les urgences et les appels manqués',
+      ivLeadPoint3:'Devis après définition du besoin',
+      ivFormTitle:'Demander votre démo',ivName:'Votre nom *',ivCompany:'Nom de votre entreprise *',ivSector:'Secteur *',
+      ivChoose:'Sélectionnez',ivSectorTrade:'Plomberie / artisanat',ivSectorGarage:'Garage / automobile',ivSectorOffice:'Cabinet professionnel',
+      ivSectorEstate:'Immobilier',ivSectorOther:'Autre',ivTime:'Moment pour vous rappeler',ivTimeAny:'Peu importe',
+      ivTimeMorning:'Matin',ivTimeAfternoon:'Après-midi',ivEmail:'Email *',ivPhone:'Mobile (facultatif)',
+      ivNotes:'Quels appels souhaitez-vous gérer ?',ivNotesPlaceholder:'Ex. urgences, rendez-vous, horaires…',
+      ivNoSensitive:"Ne saisissez pas d'informations sur vos clients ni de données médicales ou sensibles.",
+      ivPrivacyTitle:'Informations sur les données personnelles',
+      ivPrivacyText:"Responsable : Innova Group Service SRL (info@innovagroupservice.eu). Les données servent à répondre à votre demande et à organiser une démonstration ; base juridique : mesures précontractuelles demandées par vous. Elles sont traitées via Netlify Forms, conservées le temps nécessaire au traitement de la demande conformément aux obligations applicables, et ne sont pas utilisées à des fins de prospection sans base distincte. Vous pouvez demander accès, rectification, suppression et des informations sur vos droits par email. La notice détaillée sur la conservation, les prestataires et les transferts doit être finalisée avant une utilisation commerciale à grande échelle.",
+      ivConsentText:"J'ai lu les informations sur le traitement des données pour cette demande. *",
+      ivSubmitText:'Demander une démo gratuite'
+    });
+    // Translate the textarea placeholder too, as it is not a text node.
+    document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
+      const area=ivLeadForm.querySelector('[name="richiesta"]');
+      if(area)area.placeholder=i18n[voiceLanguage()].ivNotesPlaceholder;
     }));
 
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
