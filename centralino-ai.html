@@ -259,6 +259,10 @@
     @keyframes ivMicPulse{0%,100%{box-shadow:0 0 0 0 #ed785248}50%{box-shadow:0 0 0 8px #ed78520b}}
     html.iv-motion-ready .voice-section .iv-reveal{opacity:1;transform:translate3d(0,0,0);transition:opacity .66s ease var(--iv-delay,0ms),transform .66s cubic-bezier(.22,1,.36,1) var(--iv-delay,0ms)}
     html.iv-motion-ready .voice-section .iv-reveal:not(.iv-in-view){opacity:0;transform:translate3d(0,19px,0)}
+    @media(hover:hover) and (prefers-reduced-motion:no-preference){
+      html.iv-motion-ready .voice-section .voice-sector-item.iv-in-view:hover{transform:translate3d(0,-5px,0)}
+      html.iv-motion-ready .voice-section .voice-snapshot-card.iv-in-view:hover{transform:translate3d(0,-5px,0)}
+    }
     @media(hover:none){.voice-section .voice-feature-item:hover{padding-left:25px;background:transparent}.voice-section .voice-sector-item:hover,.voice-section .voice-snapshot-card:hover{transform:none;box-shadow:none}}
     @media(prefers-reduced-motion:reduce){
       html.iv-motion-ready .voice-section .iv-reveal,html.iv-motion-ready .voice-section .iv-reveal:not(.iv-in-view){opacity:1;transform:none;transition:none}
