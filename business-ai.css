@@ -105,41 +105,76 @@
 @media(prefers-reduced-motion:reduce){.home-page .innova-hero-cta-light,.home-page .business-ai-signal i,.home-page .business-ai-message,.home-page .business-ai-typing i{animation:none!important}.home-page .innova-hero-actions a,.home-page .business-ai-services article{transition:none!important}}
 
 
-/* Homepage navigation: original clean outlined chips, only slightly larger. */
+/* Homepage service chips: neatly aligned, compact, vivid orange dots. */
 .home-page .hero .hero-chiprow{
- display:flex;flex-wrap:wrap;gap:9px;max-width:620px;width:100%;
- margin-top:30px;margin-bottom:0;
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:7px;
+ width:100%;
+ max-width:436px;
+ margin-top:27px;
+ margin-bottom:0;
+ align-items:stretch;
 }
 .home-page .hero .hero-chiprow a.hero-area-link{
- display:inline-flex;align-items:center;justify-content:center;gap:10px;
- width:auto;min-height:43px;min-width:0;
- padding:11px 15px;border:1px solid #a1baca55;border-radius:3px;
- background:#ffffff05;color:#dbe8ee;
- font:700 11px/1.5 'Manrope',sans-serif;letter-spacing:.07em;text-align:center;text-decoration:none;
- box-shadow:none;backdrop-filter:none;white-space:normal;
+ display:flex;
+ align-items:center;
+ justify-content:flex-start;
+ gap:10px;
+ min-height:38px;
+ min-width:0;
+ width:100%;
+ padding:8px 12px;
+ border:1px solid #a1baca55;
+ border-radius:3px;
+ background:#ffffff05;
+ color:#dbe8ee;
+ font:700 10px/1.4 'Manrope',sans-serif;
+ letter-spacing:.055em;
+ text-align:left;
+ text-decoration:none;
+ white-space:normal;
+ box-shadow:none;
+ backdrop-filter:none;
  transition:background-color .18s,border-color .18s,color .18s;
 }
 .home-page .hero .hero-chiprow a.hero-area-link i{
- display:block;flex:none;width:6px;height:6px;border-radius:50%;
- background:#ff855c;box-shadow:0 0 0 4px #f1663b22;
+ display:block;flex:none;
+ width:6px;height:6px;
+ border-radius:50%;
+ background:#ff811c;
+ box-shadow:0 0 0 3px #ff811c38,0 0 9px 2px #ff781a9c;
 }
 .home-page .hero .hero-chiprow a.hero-area-link:hover,
 .home-page .hero .hero-chiprow a.hero-area-link:focus-visible{
- background:#ffffff15;border-color:#ff9876;color:#fff;
+ border-color:#ff9b53;
+ background:#ffffff14;
+ color:#fff;
 }
 .home-page .hero .hero-chiprow a.hero-area-link:focus-visible{
- outline:2px solid #ff9876;outline-offset:3px;
+ outline:2px solid #ff9b53;outline-offset:3px;
 }
 @media(max-width:760px){
- .home-page .hero .hero-chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;max-width:none}
+ .home-page .hero .hero-chiprow{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  max-width:436px;
+  margin-top:23px;
+ }
  .home-page .hero .hero-chiprow a.hero-area-link{
-   min-height:40px;padding:10px 12px;gap:9px;font-size:10px;
+  min-height:38px;
+  padding:8px 10px;
+  gap:8px;
+  font-size:10px;
  }
 }
 @media(max-width:390px){
- .home-page .hero .hero-chiprow{gap:7px}
+ .home-page .hero .hero-chiprow{gap:6px}
  .home-page .hero .hero-chiprow a.hero-area-link{
-   padding:9px 11px;font-size:10px;min-height:39px;
+  padding:7px 9px;
+  gap:7px;
+  min-height:38px;
+  font-size:9.5px;
  }
 }
 @media(prefers-reduced-motion:reduce){
