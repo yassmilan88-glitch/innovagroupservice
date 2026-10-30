@@ -1,11 +1,6 @@
 /* Innova AI per le aziende: transparent scripted demos; no data sent or bookings made. */
 (()=> {
   if(!document.body.classList.contains('home-page'))return;
-  const root=document.getElementById('businessAiChat');
-  const feed=document.getElementById('businessAiMessages');
-  if(!root||!feed)return;
-  const tabs=[...root.querySelectorAll('[data-business-case]')];
-  const replay=root.querySelector('#businessAiReplay');
   const demos={
     it:{
       orari:[
@@ -119,65 +114,4 @@
     show(0);
   })();
 
-  let chosen='orari',inView=false,auto=true;
-  let scheduled=[];
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const language=()=>document.documentElement.lang==='fr'?'fr':'it';
-  const cancel=()=>{scheduled.forEach(window.clearTimeout);scheduled=[];};
-  function append([type,who,copy]){
-    const bubble=document.createElement('div');
-    bubble.className='business-ai-message business-ai-message--'+type;
-    if(type==='result'){
-      const icon=document.createElement('span');icon.className='business-ai-result-check';icon.textContent='✓';
-      const body=document.createElement('span');body.textContent=copy;bubble.append(icon,body);
-    }else{
-      const label=document.createElement('strong');label.textContent=who;
-      const body=document.createElement('span');body.textContent=copy;bubble.append(label,body);
-    }
-    feed.append(bubble);
-    feed.scrollTop=feed.scrollHeight;
-  }
-  function showStatic(){cancel();feed.replaceChildren();demos[language()][chosen].forEach(append);}
-  function showAnimated(){
-    cancel();feed.replaceChildren();
-    const sequence=demos[language()][chosen];
-    sequence.forEach((line,i)=>scheduled.push(window.setTimeout(()=>append(line),[0,950,2350,3550,5050][i])));
-    if(auto){
-      scheduled.push(window.setTimeout(()=>{
-        if(!inView||document.hidden||!auto)return;
-        const keys=['orari','preventivo','negozio'];
-        chosen=keys[(keys.indexOf(chosen)+1)%keys.length];
-        render();
-      },11700));
-    }
-  }
-  function render(){
-    tabs.forEach(tab=>{
-      const selected=tab.dataset.businessCase===chosen;
-      tab.classList.toggle('is-selected',selected);
-      tab.setAttribute('aria-pressed',String(selected));
-    });
-    if(inView&&!document.hidden&&!reduced.matches)showAnimated();else showStatic();
-  }
-  tabs.forEach(tab=>tab.addEventListener('click',()=>{
-    auto=false;chosen=tab.dataset.businessCase;render();
-  }));
-  if(replay)replay.addEventListener('click',()=>{auto=false;render();});
-  document.querySelectorAll('[data-business-open-case]').forEach(link=>
-    link.addEventListener('click',()=>{auto=false;chosen=link.dataset.businessOpenCase;render();})
-  );
-  document.querySelectorAll('[data-lang]').forEach(button=>
-    button.addEventListener('click',()=>render())
-  );
-  document.addEventListener('visibilitychange',render);
-  if(reduced.addEventListener)reduced.addEventListener('change',render);
-  if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(entry.target!==root)return;
-      const was=inView;inView=entry.isIntersecting;
-      if(was!==inView)render();
-    }),{threshold:.05,rootMargin:'120px 0px 120px 0px'});
-    io.observe(root);
-  }else {inView=true;}
-  render();
 })();
