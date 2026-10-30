@@ -200,3 +200,12 @@
 .home-page .hero .hero-chiprow a.hero-area-link:focus-visible > span{
  outline:2px solid #ff9b53;outline-offset:3px;
 }
+
+/* Keep the two columns close to their labels instead of stretching them. */
+.home-page .hero .hero-chiprow{
+ grid-template-columns:max-content minmax(0,max-content);
+ width:fit-content;max-width:100%;gap:4px 14px;
+}
+.home-page .hero .hero-chiprow a.hero-area-link{
+ width:auto;min-height:40px;gap:8px;
+}
