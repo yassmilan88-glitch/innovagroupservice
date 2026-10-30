@@ -259,6 +259,13 @@
 @media(prefers-reduced-motion:reduce){.home-page .voice-art-bars i{animation:none}}
 </style>
   <link rel="stylesheet" href="/home-showcase.css">
+<style>
+    .home-page .quick-sections{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding-top:28px;padding-bottom:28px}
+    .home-page .quick-sections a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;border:1px solid #ccd1d2;border-radius:6px;color:#172d3d;background:#fff;font-size:13px;font-weight:700;line-height:1.4;text-align:center}
+    .home-page .quick-sections a:hover{border-color:#f1663b;color:#b74422}
+    .home-page .quick-sections a:focus-visible{outline:2px solid #f1663b;outline-offset:3px}
+    @media(max-width:600px){.home-page .quick-sections{gap:8px}.home-page .quick-sections a{flex:1 1 calc(50% - 8px);padding:11px 10px;font-size:12px}}
+  </style>
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -300,40 +307,7 @@
        <a class="showcase-ticker-link" href="/azienda.html"><span data-i18n="tickerFactLink">La nostra realtà</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a>
     </div></div>
     <div class="ticker"><div class="container ticker-inner"><div class="ticker-label" data-i18n="tickerLabel">Le nostre direttrici</div><div class="ticker-right"><div><b>01</b> <span data-i18n="tickerOne">INNOVAZIONE</span></div><div><b>02</b> <span data-i18n="tickerTwo">ROBOTICA & EVENTI</span></div><div><b>03</b> <span data-i18n="tickerThree">PARTNERSHIP</span></div></div></div></div>
-    <section class="section-directory" id="sezioni" aria-labelledby="directoryTitle">
-      <div class="container">
-        <div class="directory-head">
-          <div><span class="directory-eyebrow" data-i18n="dirKicker">INNOVA / LE SEZIONI</span><h2 id="directoryTitle" data-i18n="dirHeading">Cosa vuoi scoprire?</h2></div>
-          <p data-i18n="dirLead">Sei nel posto giusto. Scegli l'argomento e vai direttamente alla pagina che ti interessa.</p>
-        </div>
-        <nav class="directory-grid" aria-label="Esplora le sezioni Innova">
-          <a class="directory-card dir-about" href="/azienda.html#azienda">
-            <div class="directory-card-top"><span class="directory-number">01</span><span class="directory-label" data-i18n="dirAboutLabel">AZIENDA</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirAboutTitle">Chi c'è dietro Innova.</h3><p data-i18n="dirAboutDesc">La società, le competenze e i progetti che stiamo portando avanti.</p><span class="directory-action" data-i18n="dirAboutLink">Conosci Innova</span>
-          </a>
-          <a class="directory-card dir-robot" href="/robotica.html#robotica">
-            <div class="directory-card-top"><span class="directory-number">02</span><span class="directory-label" data-i18n="dirRobotLabel">ROBOTICA &amp; EVENTI</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirRobotTitle">Un robot al tuo evento.</h3><p data-i18n="dirRobotDesc">Fiere, matrimoni, feste private: qualcosa che gli ospiti non si aspettano.</p><span class="directory-action" data-i18n="dirRobotLink">Scopri i robot</span>
-          </a>
-          <a class="directory-card dir-voice" href="/centralino-ai.html#centralino-ai">
-            <div class="directory-card-top"><span class="directory-number">03</span><span class="directory-label" data-i18n="dirVoiceLabel">CENTRALINO AI</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirVoiceTitle">Tu lavori. Giulia risponde.</h3><p data-i18n="dirVoiceDesc">Il centralino che raccoglie le chiamate quando hai le mani occupate.</p><span class="directory-action" data-i18n="dirVoiceLink">Prova la demo</span>
-          </a>
-          <a class="directory-card dir-energy" href="/energia-terreni.html#energia-terreni">
-            <div class="directory-card-top"><span class="directory-number">04</span><span class="directory-label" data-i18n="dirEnergyLabel">ENERGIA &amp; TERRENI</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirEnergyTitle">Hai un terreno da valorizzare?</h3><p data-i18n="dirEnergyDesc">Cerchiamo aree da valutare per fotovoltaico e nuovi progetti energetici.</p><span class="directory-action" data-i18n="dirEnergyLink">Esplora il progetto</span>
-          </a>
-          <a class="directory-card dir-fuel" href="/carburanti.html">
-            <div class="directory-card-top"><span class="directory-number">05</span><span class="directory-label" data-i18n="dirFuelLabel">PRODOTTI PETROLIFERI B2B</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirFuelTitle">Prodotti petroliferi per le imprese.</h3><p data-i18n="dirFuelDesc">Per grossisti, distributori e imprese che valutano nuovi canali di approvvigionamento.</p><span class="directory-action" data-i18n="dirFuelLink">Scopri le forniture</span>
-          </a>
-          <a class="directory-card dir-partner" href="/partner.html#partner">
-            <div class="directory-card-top"><span class="directory-number">06</span><span class="directory-label" data-i18n="dirPartnerLabel">COLLABORAZIONI</span><span class="directory-arrow" aria-hidden="true">↗</span></div>
-            <h3 data-i18n="dirPartnerTitle">Hai una proposta? Parliamone.</h3><p data-i18n="dirPartnerDesc">Aziende, fornitori e partner: le buone collaborazioni iniziano da qui.</p><span class="directory-action" data-i18n="dirPartnerLink">Lavora con noi</span>
-          </a>
-        </nav>
-      </div>
-    </section>
+
     <section class="intro container" id="azienda"><div class="section-top"><div><div class="section-number">01 / <span data-i18n="aboutLabel">LA SOCIETÀ</span></div><h2 class="section-title" data-i18n-html="aboutTitle">Un'impresa.<br><span>Nuove prospettive.</span></h2></div><div class="section-lead" data-i18n="aboutDesc">Innova Group Service SRL è la realtà societaria attraverso cui sviluppiamo nuovi progetti imprenditoriali. Partiamo dal territorio cuneese e guardiamo a mercati, tecnologie e collaborazioni che possono creare valore nel tempo.</div></div><div class="intro-grid"><div class="intro-stat"><b data-i18n="aboutPillarOne">Approccio concreto</b><p data-i18n="aboutPillarOneText">Dall'idea alla fattibilità: progetti, numeri, partner e organizzazione.</p></div><div class="intro-stat"><b data-i18n="aboutPillarTwo">Mentalità internazionale</b><p data-i18n="aboutPillarTwoText">Attenzione alle opportunità tra Italia, Francia e Principato di Monaco.</p></div><div class="intro-stat"><b data-i18n="aboutPillarThree">Innovazione applicata</b><p data-i18n="aboutPillarThreeText">Tecnologie nuove al servizio di esperienze, imprese ed eventi.</p></div></div></section>
     
 <section class="project-hub" id="progetti">
@@ -632,6 +606,13 @@
       </div>
     </section>
     <section class="contact" id="contatti"><div class="container contact-content"><div><div class="eyebrow" data-i18n="contactLabel">PARLIAMONE</div><h2 data-i18n-html="contactTitle">Le buone idee<br>iniziano da<br>un <span style="color:#132637">contatto.</span></h2></div><div class="contact-right"><p data-i18n="contactDesc">Hai un evento, una proposta commerciale o vuoi conoscere meglio i nostri progetti? Scrivici. Saremo felici di confrontarci.</p><a class="contact-email" href="mailto:info@innovagroupservice.eu">info@innovagroupservice.eu</a><br><a class="contact-btn" href="mailto:info@innovagroupservice.eu?subject=Richiesta%20informazioni%20-%20Innova%20Group%20Service"><span data-i18n="contactCTA">Invia una richiesta</span><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11"/></svg></a><div class="contact-meta"><i aria-hidden="true"></i><span data-i18n="contactMeta">CUNEO · PIEMONTE · ITALIA</span></div></div></div></section>
+    <nav id="sezioni" class="quick-sections container" aria-label="Sezioni Innova">
+      <a href="/azienda.html#azienda" data-i18n="quickAbout">Azienda</a>
+      <a href="/robotica.html#robotica" data-i18n="quickRobot">Robotica &amp; eventi</a>
+      <a href="/centralino-ai.html#centralino-ai" data-i18n="quickVoice">Centralino AI</a>
+      <a href="/energia-terreni.html#energia-terreni" data-i18n="quickEnergy">Energia &amp; terreni</a>
+      <a href="/carburanti.html" data-i18n="quickFuel">Prodotti petroliferi</a>
+    </nav>
   </main>
   <footer><div class="container"><div class="footer-main"><div><a href="/" class="brand"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="brand-text">INNOVA<small>GROUP SERVICE SRL</small></span></a><p data-i18n="footerDesc">Progetti imprenditoriali, tecnologia e nuove collaborazioni. Piemonte, Italia.</p></div><nav class="footer-links"><a href="/azienda.html#azienda" data-i18n="navAbout">Azienda</a><a href="/robotica.html#robotica" data-i18n="navRobotics">Robotica</a><a href="/carburanti.html" data-i18n="navFuel">Prodotti petroliferi</a><a href="/partner.html#partner" data-i18n="navPartners">Partner</a><a href="/#contatti" data-i18n="navContact">Contattaci</a></nav></div><div class="footer-bottom"><span>© <span id="year"></span> Innova Group Service SRL. <span data-i18n="footerRights">Tutti i diritti riservati.</span></span><span data-i18n="footerLegal">Dati societari e informativa privacy da completare prima della pubblicazione pubblica.</span></div></div></footer>
   <template id="heritage-template">
@@ -1216,6 +1197,8 @@
       whyThreeTitle:'Réseau et vision européenne',whyThreeText:"Depuis Cuneo, avec une ouverture sur le Piémont, l'Italie et les marchés francophones.",
       whyFootnote:'INNOVA GROUP SERVICE SRL · CUNEO · ITALIE',whyLink:'Découvrir les collaborations ↗',contactMeta:'CUNEO · PIÉMONT · ITALIE'
     });
+    Object.assign(i18n.it,{quickAbout:'Azienda',quickRobot:'Robotica & eventi',quickVoice:'Centralino AI',quickEnergy:'Energia & terreni',quickFuel:'Prodotti petroliferi'});
+    Object.assign(i18n.fr,{quickAbout:'Entreprise',quickRobot:'Robotique & événements',quickVoice:'Standard IA',quickEnergy:'Énergie & terrains',quickFuel:'Produits pétroliers'});
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
     renderVoice();updateVoiceRoi();
   </script>
