@@ -396,3 +396,48 @@
  .home-page .premium-hub .feature-fuel p{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.home-page .fuel-card-orbit,.home-page .fuel-art-flow{animation:none!important}}
+
+/* Clear six-section directory on the homepage */
+.home-page .section-directory{padding:86px 0 94px;background:linear-gradient(135deg,#ecefea 0%,#f7f6f1 65%,#e9eeee 100%);position:relative;overflow:hidden;scroll-margin-top:20px}
+.home-page .section-directory:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #b9cfd257;border-radius:50%;right:-150px;top:-190px;box-shadow:0 0 0 70px #c6d5d417,0 0 0 140px #c6d5d40b;pointer-events:none}
+.home-page .section-directory .container{position:relative}
+.home-page .directory-head{display:grid;grid-template-columns:1fr .66fr;gap:30px;align-items:end;margin-bottom:29px}
+.home-page .directory-eyebrow{font:800 10px/1.3 'Manrope',sans-serif;letter-spacing:.2em;color:#d66945;text-transform:uppercase}
+.home-page .directory-head h2{font:800 clamp(36px,4.2vw,55px)/1.06 'Manrope',sans-serif;letter-spacing:-.055em;margin:16px 0 0;color:#132d3d}
+.home-page .directory-head p{font-size:14px;line-height:1.7;color:#5c7078;max-width:360px;margin:0 0 3px}
+.home-page .directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.home-page .directory-card{position:relative;isolation:isolate;min-height:228px;padding:24px 25px 22px;border:1px solid #d5deda;background:#fff;border-radius:7px;box-shadow:0 7px 23px #0e2e3c09;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.home-page .directory-card:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:linear-gradient(90deg,var(--dir-accent,#f1663b),transparent 80%)}
+.home-page .directory-card:after{content:"";position:absolute;inset:auto -55px -99px auto;width:175px;height:175px;background:radial-gradient(circle,var(--dir-glow,#ebf0ef),transparent 67%);border-radius:50%;z-index:-1;transition:transform .35s}
+.home-page .directory-card:hover,.home-page .directory-card:focus-visible{transform:translateY(-5px);box-shadow:0 21px 34px #153c4a1a;border-color:#b6c9c8}
+.home-page .directory-card:hover:after{transform:scale(1.25)}
+.home-page .directory-card:focus-visible{outline:3px solid #f18c67;outline-offset:3px}
+.home-page .directory-card-top{display:flex;align-items:center;gap:12px;min-height:29px}
+.home-page .directory-number{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #d4e0e0;border-radius:5px;font:800 10px 'Manrope',sans-serif;color:var(--dir-accent,#d56340);background:#f7f9f8}
+.home-page .directory-label{font:800 9px/1.4 'Manrope',sans-serif;letter-spacing:.12em;color:#758c98;white-space:nowrap}
+.home-page .directory-arrow{display:grid;place-items:center;margin-left:auto;width:29px;height:29px;background:#eaf0ef;border-radius:50%;font:800 19px/1 'Manrope',sans-serif;color:#294e5f;transition:transform .2s,background .2s,color .2s}
+.home-page .directory-card:hover .directory-arrow{transform:translate(2px,-2px);background:#15374a;color:white}
+.home-page .directory-card h3{color:#163244;font:800 clamp(18px,1.9vw,24px)/1.17 'Manrope',sans-serif;letter-spacing:-.043em;margin:24px 0 11px;max-width:290px}
+.home-page .directory-card p{font-size:12px;line-height:1.62;color:#617782;margin:0 0 21px;max-width:300px}
+.home-page .directory-action{font:800 10px/1.4 'Manrope',sans-serif;color:var(--dir-accent,#cf6040);margin-top:auto;letter-spacing:.025em}
+.home-page .dir-about{--dir-accent:#d96d49;--dir-glow:#faeee4}
+.home-page .dir-robot{--dir-accent:#467997;--dir-glow:#e0ecf4}
+.home-page .dir-voice{--dir-accent:#348789;--dir-glow:#daefed}
+.home-page .dir-energy{--dir-accent:#6b9273;--dir-glow:#e2eee2}
+.home-page .dir-fuel{--dir-accent:#c96a3d;--dir-glow:#f7eadc}
+.home-page .dir-partner{--dir-accent:#817497;--dir-glow:#eae7f3}
+@media(max-width:960px){
+ .home-page .directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .home-page .directory-card h3{font-size:22px}
+}
+@media(max-width:640px){
+ .home-page .section-directory{padding:63px 0 72px}
+ .home-page .directory-head{grid-template-columns:1fr;gap:13px;margin-bottom:24px}
+ .home-page .directory-head h2{font-size:37px}
+ .home-page .directory-head p{font-size:13px}
+ .home-page .directory-grid{grid-template-columns:1fr;gap:10px}
+ .home-page .directory-card{min-height:190px;padding:20px 22px}
+ .home-page .directory-card h3{font-size:22px;margin:17px 0 8px}
+ .home-page .directory-card p{font-size:12px;margin-bottom:13px}
+}
+@media(prefers-reduced-motion:reduce){.home-page .directory-card,.home-page .directory-card:after,.home-page .directory-arrow{transition:none!important}}
