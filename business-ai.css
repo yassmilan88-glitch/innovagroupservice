@@ -109,17 +109,17 @@
 .home-page .hero .hero-chiprow{
  display:grid;
  grid-template-columns:repeat(2,minmax(0,1fr));
- gap:11px;
- max-width:580px;
+ gap:9px;
+ max-width:550px;
  width:100%;
- margin-top:33px;
+ margin-top:29px;
  margin-bottom:0;
 }
 .home-page .hero .hero-chiprow a.hero-area-link{
  position:relative;isolation:isolate;
- display:flex;align-items:center;justify-content:flex-start;gap:15px;
- min-height:78px;min-width:0;
- padding:16px 19px;
+ display:flex;align-items:center;justify-content:flex-start;gap:12px;
+ min-height:68px;min-width:0;
+ padding:13px 16px;
  background:linear-gradient(125deg,#183349d9,#102738cc);
  border:1px solid #c2ddea5c;
  border-radius:9px;
@@ -139,7 +139,7 @@
 }
 .home-page .hero .hero-chiprow a.hero-area-link .hero-area-id{
  display:grid;place-items:center;flex:none;
- width:36px;height:36px;
+ width:32px;height:32px;
  border-radius:8px;
  background:#ee84532b;
  border:1px solid #f7a37a5e;
@@ -159,14 +159,14 @@
 .home-page .hero .hero-note{margin-top:30px}
 @media(max-width:760px){
  .home-page .hero .hero-chiprow{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;max-width:none;margin-top:25px}
- .home-page .hero .hero-chiprow a.hero-area-link{min-height:72px;padding:12px 12px;gap:10px;font-size:11px}
- .home-page .hero .hero-chiprow a.hero-area-link .hero-area-id{width:30px;height:30px;border-radius:6px;font-size:11px}
+ .home-page .hero .hero-chiprow a.hero-area-link{min-height:64px;padding:10px 11px;gap:9px;font-size:11px}
+ .home-page .hero .hero-chiprow a.hero-area-link .hero-area-id{width:28px;height:28px;border-radius:6px;font-size:11px}
  .home-page .hero .hero-chiprow a.hero-area-link:after{right:11px;top:9px;width:5px;height:5px}
  .home-page .hero .hero-note{margin-top:25px}
 }
 @media(max-width:390px){
  .home-page .hero .hero-chiprow{gap:7px}
- .home-page .hero .hero-chiprow a.hero-area-link{gap:7px;min-height:74px;padding:10px;font-size:10px}
+ .home-page .hero .hero-chiprow a.hero-area-link{gap:7px;min-height:66px;padding:9px;font-size:10px}
  .home-page .hero .hero-chiprow a.hero-area-link .hero-area-id{width:26px;height:26px;font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.home-page .hero .hero-chiprow a.hero-area-link{transition:none}}
