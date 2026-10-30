@@ -1,0 +1,105 @@
+/* INNOVA — AI per le aziende / homepage experience */
+.home-page .hero .innova-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;align-items:center;position:relative;z-index:8}
+.home-page .innova-hero-actions a{min-height:52px;padding:14px 18px;display:inline-flex;align-items:center;justify-content:center;gap:11px;font:800 12px/1.35 'Manrope',sans-serif;border-radius:5px;transition:transform .2s,box-shadow .2s,background-color .2s;text-decoration:none}
+.home-page .innova-hero-actions svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.home-page .innova-hero-primary{background:#f4754d;color:#fff;border:1px solid #ff9c77;box-shadow:0 10px 28px #e75c3a35}
+.home-page .innova-hero-secondary{background:#ffffff0c;color:#f5f8fa;border:1px solid #ffffff6b}
+.home-page .innova-hero-actions a:hover,.home-page .innova-hero-actions a:focus-visible{transform:translateY(-3px);box-shadow:0 14px 28px #06111a80}
+.home-page .innova-hero-secondary:hover{background:#ffffff20}
+.home-page .innova-hero-primary .innova-hero-cta-light{width:9px;height:9px;border-radius:50%;background:#c4ffe6;box-shadow:0 0 0 5px #baf7e428;animation:innovaBusinessPulse 2.5s ease-in-out infinite}
+.home-page .hero .hero-chiprow a{display:inline-flex;align-items:center;gap:9px;border:1px solid #a1baca42;color:#d7e5eb;padding:8px 12px;border-radius:3px;font:700 10px/1.5 'Manrope',sans-serif;letter-spacing:.09em;text-decoration:none;transition:color .2s,border-color .2s,background-color .2s}
+.home-page .hero .hero-chiprow a:hover,.home-page .hero .hero-chiprow a:focus-visible{border-color:#ff9876;color:#fff;background:#ffffff15}
+.home-page .hero .hero-chiprow a i{width:5px;height:5px;border-radius:50%;background:#ff855c;box-shadow:0 0 0 4px #f1663b22}
+.home-page .innova-business-ai{padding:96px 0 105px;background:#0e2232;color:#f5f9fb;position:relative;overflow:hidden;isolation:isolate;scroll-margin-top:0}
+.home-page .innova-business-ai:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 85% 20%,#2b59664a,transparent 48%),radial-gradient(ellipse at 6% 85%,#e8774717,transparent 46%)}
+.home-page .innova-business-ai .container{position:relative}
+.home-page .business-ai-head{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;margin-bottom:37px}
+.home-page .business-ai-eyebrow{display:flex;gap:12px;align-items:center;color:#fca27f;letter-spacing:.17em;font:800 10px 'Manrope',sans-serif}
+.home-page .business-ai-eyebrow i{width:8px;height:8px;background:#fd8c63;transform:rotate(45deg);box-shadow:0 0 15px #fd8c6399}
+.home-page .business-ai-head h2{font:800 clamp(37px,4vw,61px)/1.1 'Manrope',sans-serif;letter-spacing:-.065em;margin:17px 0 0}
+.home-page .business-ai-head h2 em{font-style:normal;color:#ff906a}
+.home-page .business-ai-head p{max-width:455px;line-height:1.8;font-size:15px;color:#b8c9d3;margin:0}
+.home-page .business-ai-showcase{display:grid;grid-template-columns:.86fr 1.14fr;gap:20px;align-items:stretch}
+.home-page .business-ai-copy{border:1px solid #ffffff22;border-radius:13px;padding:clamp(25px,3vw,42px);background:linear-gradient(145deg,#1a364a,#142b3e);display:flex;flex-direction:column;align-items:flex-start;position:relative;overflow:hidden}
+.home-page .business-ai-copy:before{content:"";position:absolute;width:250px;height:250px;right:-160px;top:-150px;border:1px solid #97c7d546;border-radius:50%;box-shadow:0 0 0 55px #97c7d50c,0 0 0 105px #97c7d509;pointer-events:none}
+.home-page .business-ai-label{display:inline-flex;align-items:center;gap:9px;font:800 10px 'Manrope',sans-serif;letter-spacing:.15em;color:#ffb192}
+.home-page .business-ai-label:before{content:"";width:20px;height:1px;background:#ffa982}
+.home-page .business-ai-copy h3{max-width:450px;font:800 clamp(26px,3vw,39px)/1.15 'Manrope',sans-serif;letter-spacing:-.052em;margin:24px 0 16px;position:relative}
+.home-page .business-ai-copy h3 span{color:#ffa180}
+.home-page .business-ai-copy>p{color:#b8cbd5;font-size:14px;line-height:1.85;margin:0 0 23px;position:relative}
+.home-page .business-ai-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 29px}
+.home-page .business-ai-benefits span{padding:9px 11px;border:1px solid #ffffff2e;border-radius:30px;background:#ffffff09;color:#e1edf1;font-size:11px;font-weight:700}
+.home-page .business-ai-disclaimer{font-size:10px;line-height:1.6;color:#9eb5c1;margin-top:auto}
+.home-page .business-ai-contact{margin-top:25px;display:inline-flex;gap:13px;align-items:center;min-height:51px;border:1px solid #ff957b;border-radius:5px;background:#f4754d;color:white;padding:13px 17px;text-align:left;font:800 12px 'Manrope',sans-serif;text-decoration:none;transition:transform .2s,background .2s}
+.home-page .business-ai-contact:hover{background:#ff8866;transform:translateY(-2px)}
+.home-page .business-ai-contact svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.home-page .business-ai-chat{background:#f7faf9;color:#183345;border-radius:13px;border:1px solid #d8e8e7;overflow:hidden;box-shadow:0 25px 60px #03121e6b;display:flex;flex-direction:column;min-width:0;scroll-margin-top:20px}
+.home-page .business-ai-chat-header{background:linear-gradient(125deg,#e9f1ee,#f9f7f4);border-bottom:1px solid #dce5e4;padding:19px 23px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.home-page .business-ai-profile{display:flex;align-items:center;gap:12px}
+.home-page .business-ai-avatar{height:43px;width:43px;flex:none;display:grid;place-items:center;border-radius:12px;background:#173b4e;color:#fff;font:800 17px 'Manrope',sans-serif;box-shadow:inset 0 0 0 1px #ffffff25}
+.home-page .business-ai-profile strong{display:block;font:800 15px 'Manrope',sans-serif}
+.home-page .business-ai-profile small{display:flex;gap:6px;align-items:center;margin-top:3px;color:#54707c;font-size:11px}
+.home-page .business-ai-profile small i{height:7px;width:7px;border-radius:50%;background:#23ac7f;box-shadow:0 0 0 4px #23ac7f1f}
+.home-page .business-ai-signal{height:25px;display:flex;align-items:center;gap:3px}
+.home-page .business-ai-signal i{width:3px;height:13px;border-radius:4px;background:#f07551;animation:innovaBusinessBars 1.2s ease-in-out infinite}
+.home-page .business-ai-signal i:nth-child(2){height:23px;animation-delay:-.35s}
+.home-page .business-ai-signal i:nth-child(3){height:10px;animation-delay:-.6s}
+.home-page .business-ai-signal i:nth-child(4){height:19px;animation-delay:-.82s}
+.home-page .business-ai-signal i:nth-child(5){height:8px;animation-delay:-.23s}
+.home-page .business-ai-cases{display:flex;flex-wrap:wrap;gap:7px;padding:16px 18px;background:#f7faf9;border-bottom:1px solid #e0ebe9}
+.home-page .business-ai-cases button{min-height:39px;padding:8px 13px;border-radius:22px;background:#fff;border:1px solid #cadbdc;color:#416173;cursor:pointer;font:800 11px 'Manrope',sans-serif;transition:background .2s,color .2s,border-color .2s}
+.home-page .business-ai-cases button[aria-pressed="true"],.home-page .business-ai-cases button:hover,.home-page .business-ai-cases button:focus-visible{background:#183f53;border-color:#183f53;color:#fff}
+.home-page .business-ai-messages{height:320px;overflow-y:auto;overscroll-behavior:contain;padding:21px;display:flex;flex-direction:column;align-items:stretch;gap:13px;scrollbar-width:thin}
+.home-page .business-ai-message{max-width:83%;display:flex;flex-direction:column;gap:5px;padding:12px 15px;border-radius:13px;font-size:13px;line-height:1.6;white-space:pre-wrap;animation:innovaBusinessBubble .32s cubic-bezier(.2,.7,.1,1) both}
+.home-page .business-ai-message strong{font:800 10px 'Manrope',sans-serif;color:inherit;opacity:.7;letter-spacing:.025em}
+.home-page .business-ai-message--customer{background:#dbeaf1;color:#1b485e;border-bottom-right-radius:3px;align-self:flex-end}
+.home-page .business-ai-message--assistant{background:#e8efed;color:#284857;border-bottom-left-radius:3px;align-self:flex-start}
+.home-page .business-ai-message--result{display:flex;flex-direction:row;gap:11px;align-items:center;background:#e8f7ef;color:#256144;border:1px solid #cae9d9;max-width:100%;font-weight:800;font-size:12px;align-self:stretch}
+.home-page .business-ai-result-check{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:#2b986c;color:#fff;font-weight:900}
+.home-page .business-ai-typing{display:inline-flex;gap:4px;align-self:flex-start;padding:14px 17px;background:#e8efed;border-radius:12px}
+.home-page .business-ai-typing i{width:6px;height:6px;background:#8098a0;border-radius:50%;animation:innovaBusinessTyping 1s ease-in-out infinite}
+.home-page .business-ai-typing i:nth-child(2){animation-delay:.15s}
+.home-page .business-ai-typing i:nth-child(3){animation-delay:.3s}
+.home-page .business-ai-chat-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-top:1px solid #dfebea;background:#f0f5f3}
+.home-page .business-ai-chat-footer>span{color:#647a83;font-size:10px;font-weight:700;display:flex;align-items:center;gap:6px}
+.home-page .business-ai-chat-footer>span i{width:6px;height:6px;border-radius:50%;background:#ed8356}
+.home-page .business-ai-chat-footer button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 12px;border:1px solid #bed0d1;border-radius:5px;color:#225168;background:#fff;font-size:11px;font-weight:800;cursor:pointer}
+.home-page .business-ai-chat-footer button:hover{background:#e0efed}
+.home-page .business-ai-chat-footer svg{height:16px;width:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.home-page .business-ai-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+.home-page .business-ai-services article{display:flex;flex-direction:column;min-height:250px;background:#ffffff08;border:1px solid #ffffff23;border-radius:9px;padding:23px 21px;transition:background .25s,border-color .25s,transform .25s}
+.home-page .business-ai-services article:hover{background:#ffffff11;border-color:#d4edff62;transform:translateY(-4px)}
+.home-page .business-ai-service-number{font:800 10px 'Manrope',sans-serif;color:#fa9a7c;letter-spacing:.11em}
+.home-page .business-ai-services h3{font:800 18px/1.23 'Manrope',sans-serif;margin:18px 0 10px;color:#f8fbfd;letter-spacing:-.03em}
+.home-page .business-ai-services p{font-size:12px;line-height:1.7;color:#aec4d0;margin:0 0 22px}
+.home-page .business-ai-services a{font:800 11px 'Manrope',sans-serif;color:#ffa37f;margin-top:auto;border-bottom:1px solid #ffffff29;padding-bottom:10px;width:fit-content}
+.home-page .business-ai-services a:hover{color:#fff}
+@keyframes innovaBusinessBubble{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes innovaBusinessTyping{0%,75%,100%{opacity:.35;transform:translateY(0)}37%{opacity:1;transform:translateY(-5px)}}
+@keyframes innovaBusinessBars{0%,100%{transform:scaleY(.45)}45%{transform:scaleY(1.07)}}
+@keyframes innovaBusinessPulse{50%{box-shadow:0 0 0 9px #baf7e411}}
+@media(max-width:1120px){.home-page .business-ai-services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.home-page .business-ai-head{grid-template-columns:1fr;gap:14px}.home-page .business-ai-showcase{grid-template-columns:1fr}.home-page .business-ai-copy{padding:29px}.home-page .business-ai-head p{max-width:650px}.home-page .business-ai-services article{min-height:208px}}
+@media(max-width:760px){
+ .home-page .hero .innova-hero-actions{margin-top:25px;gap:9px}
+ .home-page .innova-hero-actions a{min-height:48px;padding:12px 13px;font-size:11px;flex:1 1 100%}
+ .home-page .hero .hero-chiprow a{font-size:9px;padding:8px 9px}
+ .home-page .hero-art{opacity:.43;right:-46%;width:115%}
+ .home-page .innova-business-ai{padding:70px 0 75px}
+ .home-page .business-ai-head{margin-bottom:23px}
+ .home-page .business-ai-head h2{font-size:clamp(36px,9vw,45px)}
+ .home-page .business-ai-head p{font-size:13px}
+ .home-page .business-ai-copy h3{font-size:31px}
+ .home-page .business-ai-services{grid-template-columns:1fr 1fr;gap:9px}
+ .home-page .business-ai-services article{padding:19px 14px;min-height:215px}
+ .home-page .business-ai-services h3{font-size:15px}
+ .home-page .business-ai-services p{font-size:11px}
+ .home-page .business-ai-cases{padding:12px;gap:6px}
+ .home-page .business-ai-cases button{font-size:10px;padding:8px 10px;flex:1 1 auto}
+ .home-page .business-ai-messages{height:275px;padding:14px;gap:10px}
+ .home-page .business-ai-message{font-size:12px;padding:11px 12px}
+ .home-page .business-ai-chat-header{padding:16px}
+ .home-page .business-ai-chat-footer{padding:12px}
+}
+@media(max-width:390px){.home-page .business-ai-services{grid-template-columns:1fr}.home-page .business-ai-services article{min-height:0}.home-page .business-ai-service-number{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.home-page .innova-hero-cta-light,.home-page .business-ai-signal i,.home-page .business-ai-message,.home-page .business-ai-typing i{animation:none!important}.home-page .innova-hero-actions a,.home-page .business-ai-services article{transition:none!important}}
