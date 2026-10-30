@@ -54,6 +54,71 @@
       ]
     }
   };
+
+  // The project card shares the existing scripted chat examples.
+  (function initProjectCarousel(){
+    const card=document.querySelector('.feature-ai');
+    const voice=card?.querySelector('.hub-voice-art');
+    if(!voice)return;
+    const viewport=document.createElement('div');
+    viewport.className='hub-visual ai-preview-carousel';
+    viewport.setAttribute('aria-label','Demo chiamate e chat AI');
+    const track=document.createElement('div');track.className='ai-preview-track';
+    voice.before(viewport);voice.classList.remove('hub-visual');
+    voice.classList.add('ai-preview-slide');
+    const chat=document.createElement('div');chat.className='ai-preview-slide ai-preview-chat';
+    chat.innerHTML='<div class="ai-mini-head"><b>INNOVA / CHAT AI</b><span>Demo</span></div><div class="ai-mini-feed"></div>';
+    track.append(voice,chat);
+    const controls=document.createElement('div');controls.className='ai-preview-controls';
+    const buttons=['Chiamate','Chat AI'].map((label,i)=>{
+      const b=document.createElement('button');b.type='button';b.textContent=label;
+      b.addEventListener('click',()=>{paused=true;show(i);});controls.append(b);return b;
+    });
+    const pause=document.createElement('button');pause.type='button';controls.append(pause);
+    viewport.append(track,controls);
+    let active=0,paused=false,visible=false,timer=null,messageTimers=[];
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const lang=()=>document.documentElement.lang==='fr'?'fr':'it';
+    function clear(){clearTimeout(timer);messageTimers.forEach(clearTimeout);messageTimers=[];}
+    function renderChat(){
+      const feed=chat.querySelector('.ai-mini-feed');feed.replaceChildren();
+      demos[lang()].orari.forEach(([type,who,copy],i)=>{
+        const append=()=>{
+          const row=document.createElement('div');row.className='ai-mini-message '+type;
+          row.textContent=copy;feed.append(row);feed.scrollTop=feed.scrollHeight;
+        };
+        if(reduce.matches)append();
+        else messageTimers.push(setTimeout(append,i*1250));
+      });
+    }
+    function show(index){
+      clear();active=index;track.style.transform='translateX(-'+index*50+'%)';
+      [voice,chat].forEach((node,i)=>node.setAttribute('aria-hidden',String(i!==index)));
+      buttons.forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===index));b.textContent=i?'Chat AI':(lang()==='fr'?'Appels':'Chiamate');});
+      pause.textContent=paused?'▶':'Ⅱ';
+      pause.setAttribute('aria-label',paused?(lang()==='fr'?'Reprendre':'Riprendi scorrimento'):(lang()==='fr'?'Pause':'Pausa scorrimento'));
+      if(index===1)renderChat();
+      if(visible&&!document.hidden&&!paused&&!reduce.matches)timer=setTimeout(()=>show(1-active),10000);
+    }
+    pause.addEventListener('click',()=>{paused=!paused;show(active);});
+    let touch=null;
+    viewport.addEventListener('touchstart',e=>{touch=[e.touches[0].clientX,e.touches[0].clientY];},{passive:true});
+    viewport.addEventListener('touchend',e=>{
+      if(!touch)return;
+      const dx=e.changedTouches[0].clientX-touch[0],dy=e.changedTouches[0].clientY-touch[1];touch=null;
+      if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){paused=true;show(dx<0?1:0);}
+    },{passive:true});
+    viewport.addEventListener('focusin',()=>{paused=true;clear();});
+    document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>show(active)));
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)clear();else show(active);});
+    if(reduce.addEventListener)reduce.addEventListener('change',()=>show(active));
+    if('IntersectionObserver' in window)new IntersectionObserver(entries=>{
+      visible=entries[0].isIntersecting;if(visible)show(active);else clear();
+    },{threshold:.1}).observe(viewport);
+    else visible=true;
+    show(0);
+  })();
+
   let chosen='orari',inView=false,auto=true;
   let scheduled=[];
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
