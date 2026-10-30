@@ -187,13 +187,6 @@
 @media(max-width:760px){.nav-links{top:76px}}
 
     /* Innova Voice - first-stage lead acquisition, isolated to the service page */
-    .iv-entrybar{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:19px 23px;margin:4px 0 29px;border:1px solid #ffffff35;background:#ffffff0a}
-    .iv-entrybar p{font-size:13px;line-height:1.6;color:#c6d8e2;margin:4px 0 0;max-width:600px}
-    .iv-entrybar strong{font:800 17px 'Manrope',sans-serif}
-    .iv-entry-buttons{display:flex;gap:10px;flex-wrap:wrap}
-    .iv-entry-buttons button,.iv-entry-buttons a{min-height:44px;padding:12px 16px;border:1px solid #ff9573;background:#f1663b;color:white;font-size:12px;font-weight:800;cursor:pointer;text-align:center}
-    .iv-entry-buttons a{background:transparent;color:#fff;border-color:#ffffff70}
-    .iv-entry-buttons button:hover,.iv-entry-buttons a:hover{filter:brightness(1.14)}
     .iv-lead{display:grid;grid-template-columns:.78fr 1.22fr;gap:42px;margin:80px 0 18px;padding:38px;border:1px solid #ffffff30;background:#0d2030;scroll-margin-top:28px}
     .iv-lead-copy h3{font:800 clamp(27px,3.4vw,42px)/1.12 'Manrope',sans-serif;letter-spacing:-.045em;margin:0 0 15px}
     .iv-lead-copy h3 span{color:#ff9c7f}
@@ -222,53 +215,103 @@
     .iv-lead-status[data-state="success"]{color:#21634c}
     .iv-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
     @media(max-width:920px){.iv-lead{grid-template-columns:1fr;gap:22px}}
-    @media(max-width:680px){.iv-entrybar{align-items:stretch;flex-direction:column;padding:18px}.iv-entry-buttons{flex-direction:column}.iv-entry-buttons button,.iv-entry-buttons a{width:100%}.iv-lead{margin-top:55px;padding:16px;gap:19px}.iv-lead-form{padding:17px}.iv-fields{grid-template-columns:1fr}.iv-fields label.iv-wide{grid-column:auto}}
+    @media(max-width:680px){.iv-lead{margin-top:55px;padding:16px;gap:19px}.iv-lead-form{padding:17px}.iv-fields{grid-template-columns:1fr}.iv-fields label.iv-wide{grid-column:auto}}
 
-    /* Innova Voice — motion system: restrained, accessible, mobile friendly. */
-    .voice-section .iv-svg-arrow{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block;transition:transform .27s cubic-bezier(.22,1,.36,1)}
-    .voice-section .voice-sector-item button:hover .iv-svg-arrow,
-    .voice-section .voice-sector-item button:focus-visible .iv-svg-arrow,
-    .voice-section .iv-lead-submit:hover .iv-svg-arrow,
-    .voice-section .iv-lead-submit:focus-visible .iv-svg-arrow{transform:translate(3px,-3px)}
-    .voice-section .iv-lead-submit{transition:background-color .23s,box-shadow .23s,transform .23s}
-    .voice-section .iv-lead-submit:not(:disabled):hover{background:#d95d38;box-shadow:0 9px 23px #d35b383a;transform:translateY(-2px)}
-    .voice-section .iv-lead-submit:not(:disabled):active{transform:translateY(0);box-shadow:none}
-    .voice-section .iv-entry-buttons a,.voice-section .iv-entry-buttons button{transition:transform .24s,background-color .24s,box-shadow .24s}
-    .voice-section .iv-entry-buttons a:hover,.voice-section .iv-entry-buttons button:hover{transform:translateY(-2px);box-shadow:0 9px 25px #0b182d55}
-    .voice-section .voice-sector-item{transition:transform .32s cubic-bezier(.22,1,.36,1),background-color .25s,border-color .25s,box-shadow .3s}
-    .voice-section .voice-sector-item:hover{transform:translateY(-5px);box-shadow:0 17px 32px #07182752}
-    .voice-section .voice-feature-item{transition:background-color .3s,padding-left .3s}
-    .voice-section .voice-feature-item:hover{background:#ffffff09;padding-left:30px}
-    .voice-section .voice-snapshot-card{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s}
-    .voice-section .voice-snapshot-card:hover{transform:translateY(-5px);box-shadow:0 30px 55px #06152162}
-    .voice-section .voice-demo:focus-within{box-shadow:0 22px 50px #0002,0 0 0 2px #ff987669}
-    .voice-section .voice-bubble:last-child{animation:ivBubbleIn .33s cubic-bezier(.2,.8,.2,1) both}
-    .voice-section .voice-demo-led{animation:ivStatusPulse 3.4s ease-in-out infinite}
-    .voice-section .iv-demo-indicator{display:inline-flex;gap:13px;align-items:center;justify-content:flex-end;flex:none}
-    .voice-section .iv-demo-wave{display:flex;align-items:center;justify-content:center;gap:3px;height:22px}
-    .voice-section .iv-demo-wave i{display:block;width:3px;height:14px;transform:scaleY(.22);border-radius:5px;background:#ed7852;transform-origin:center;opacity:.62}
-    .voice-section .voice-demo.iv-audio-on .iv-demo-wave i{animation:ivVoiceBars 1.05s ease-in-out infinite;opacity:1}
-    .voice-section .iv-demo-wave i:nth-child(2){animation-delay:-.6s}
-    .voice-section .iv-demo-wave i:nth-child(3){animation-delay:-.27s}
-    .voice-section .iv-demo-wave i:nth-child(4){animation-delay:-.8s}
-    .voice-section .iv-demo-wave i:nth-child(5){animation-delay:-.43s}
-    .voice-section .voice-demo #voiceMic.listening{animation:ivMicPulse 1.55s ease-in-out infinite}
-    @keyframes ivStatusPulse{0%,100%{box-shadow:0 0 0 4px #19a67d16}48%{box-shadow:0 0 0 9px #19a67d09}}
-    @keyframes ivBubbleIn{from{opacity:0;transform:translateY(9px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-    @keyframes ivVoiceBars{0%,100%{transform:scaleY(.24)}25%{transform:scaleY(.95)}50%{transform:scaleY(.45)}75%{transform:scaleY(.82)}}
-    @keyframes ivMicPulse{0%,100%{box-shadow:0 0 0 0 #ed785248}50%{box-shadow:0 0 0 8px #ed78520b}}
-    html.iv-motion-ready .voice-section .iv-reveal{opacity:1;transform:translate3d(0,0,0);transition:opacity .66s ease var(--iv-delay,0ms),transform .66s cubic-bezier(.22,1,.36,1) var(--iv-delay,0ms)}
-    html.iv-motion-ready .voice-section .iv-reveal:not(.iv-in-view){opacity:0;transform:translate3d(0,19px,0)}
-    @media(hover:hover) and (prefers-reduced-motion:no-preference){
-      html.iv-motion-ready .voice-section .voice-sector-item.iv-in-view:hover{transform:translate3d(0,-5px,0)}
-      html.iv-motion-ready .voice-section .voice-snapshot-card.iv-in-view:hover{transform:translate3d(0,-5px,0)}
-    }
-    @media(hover:none){.voice-section .voice-feature-item:hover{padding-left:25px;background:transparent}.voice-section .voice-sector-item:hover,.voice-section .voice-snapshot-card:hover{transform:none;box-shadow:none}}
-    @media(prefers-reduced-motion:reduce){
-      html.iv-motion-ready .voice-section .iv-reveal,html.iv-motion-ready .voice-section .iv-reveal:not(.iv-in-view){opacity:1;transform:none;transition:none}
-      .voice-section .voice-demo-led,.voice-section .voice-demo.iv-audio-on .iv-demo-wave i,.voice-section .voice-demo #voiceMic.listening,.voice-section .voice-bubble:last-child{animation:none}
-      .voice-section .iv-lead-submit,.voice-section .iv-entry-buttons a,.voice-section .iv-entry-buttons button,.voice-section .voice-sector-item,.voice-section .voice-feature-item,.voice-section .voice-snapshot-card,.voice-section .iv-svg-arrow{transition:none!important}
-    }
+    
+    /* Innova Voice creative spotlight — focused motion, no global scroll reveal */
+    .voice-section .iv-svg-arrow{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .voice-section .voice-sector-item button:hover .iv-svg-arrow,.voice-section .iv-lead-submit:hover .iv-svg-arrow{transform:translate(2px,-2px)}
+    .voice-section .iv-lead-submit .iv-svg-arrow{transition:transform .22s}
+    .voice-section .iv-lead-submit{transition:background .25s,box-shadow .25s}
+    .voice-section .iv-lead-submit:not(:disabled):hover{background:#d95d38;box-shadow:0 9px 25px #c75e3d43}
+    .iv-spotlight{isolation:isolate;position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:auto 1fr;column-gap:22px;overflow:hidden;margin:7px 0 32px;padding:clamp(27px,4.3vw,56px);border-radius:25px;background:linear-gradient(118deg,#0b1725 0%,#142e40 60%,#173347 100%);box-shadow:0 25px 70px #030c1690;border:1px solid #7e9aae36}
+    .iv-spotlight:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 75% 38%,#2e6b8352,transparent 49%),radial-gradient(ellipse at 5% 98%,#f4795630,transparent 40%)}
+    .iv-spotlight:after{content:"";position:absolute;right:0;top:0;width:54%;height:100%;pointer-events:none;opacity:.22;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:33px 33px;mask-image:linear-gradient(90deg,transparent,#000)}
+    .iv-spotlight-copy{grid-column:1;grid-row:1;position:relative;z-index:2;align-self:end;padding:9px 0 0}
+    .iv-spotlight-eyebrow{display:inline-flex;align-items:center;gap:11px;color:#e7b6a3;font-size:10px;font-weight:800;letter-spacing:.16em;margin-bottom:26px}
+    .iv-eyebrow-mark{width:9px;height:9px;background:#f68b68;transform:rotate(45deg);box-shadow:0 0 20px #ff885388}
+    .iv-spotlight-copy h3{font:800 clamp(36px,4.25vw,62px)/1.065 'Manrope',sans-serif;letter-spacing:-.067em;margin:0 0 22px;max-width:530px}
+    .iv-spotlight-copy h3 em{font-style:normal;color:#ff986f}
+    .iv-spotlight-copy>p{max-width:470px;font-size:clamp(14px,1.35vw,16px);color:#c2d4df;line-height:1.78;margin:0}
+    .iv-spotlight-bottom{grid-column:1;grid-row:2;z-index:2;align-self:start;padding-top:34px}
+    .iv-spotlight-actions{display:flex;flex-wrap:wrap;align-items:center;gap:11px}
+    .iv-spotlight-actions button,.iv-spotlight-actions a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:53px;border-radius:10px;padding:13px 18px;font:800 12px 'Manrope',sans-serif;letter-spacing:-.012em;text-decoration:none;cursor:pointer;transition:box-shadow .28s,transform .28s,background-color .28s,border-color .28s;white-space:normal;text-align:center}
+    .iv-spotlight-primary{background:#f26f4b;color:#fff;border:1px solid #ffb29e}
+    .iv-spotlight-primary:hover,.iv-spotlight-primary:focus-visible{background:#fd805d;transform:translateY(-3px);box-shadow:0 11px 30px #f0694870}
+    .iv-spotlight-secondary{background:#ffffff09;border:1px solid #ffffff55;color:#f7fcff}
+    .iv-spotlight-secondary:hover,.iv-spotlight-secondary:focus-visible{background:#ffffff19;border-color:#ffffffb0;transform:translateY(-2px)}
+    .iv-spotlight-play{width:23px;height:23px;display:grid;place-items:center;flex:none;border-radius:50%;background:#ffffff29}
+    .iv-spotlight-play svg{width:12px;height:12px}
+    .iv-spotlight-primary .iv-svg-arrow{width:16px;height:16px;opacity:.9}
+    .iv-spotlight-benefits{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .iv-spotlight-benefits>span{display:inline-flex;align-items:center;gap:7px;border:1px solid #ffffff24;border-radius:20px;padding:8px 11px;background:#ffffff07;color:#e2edf2;font-size:11px;font-weight:700}
+    .iv-spotlight-benefits svg{width:15px;height:15px;color:#ff9977}
+    .iv-spotlight-footnote{margin:22px 0 0;font-size:10px;color:#9eb3c1;line-height:1.6}
+    .iv-spotlight-stage{grid-column:2;grid-row:1/3;position:relative;align-self:center;display:grid;place-items:center;min-height:440px;z-index:1;padding:25px 7px 30px;pointer-events:none}
+    .iv-stage-aura{position:absolute;border-radius:50%;pointer-events:none}
+    .iv-stage-aura-one{width:340px;height:340px;max-width:95%;background:radial-gradient(circle,#e9715973 0%,#f1805030 26%,transparent 65%);filter:blur(35px);animation:ivAuraBreathe 6.4s ease-in-out infinite}
+    .iv-stage-aura-two{width:290px;height:290px;max-width:90%;border:1px solid #90ccdf26;box-shadow:0 0 0 21px #73b7ce0c,0 0 0 58px #73b7ce06;transform:rotate(19deg)}
+    .iv-holo-console{position:relative;width:min(100%,325px);padding:19px 22px 20px;border-radius:24px;background:linear-gradient(150deg,#214559ef,#102536f8 78%);border:1px solid #a8dced52;box-shadow:0 25px 50px #030d18a3,inset 0 1px 0 #ffffff22;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);animation:ivConsoleFloat 5.8s ease-in-out infinite}
+    .iv-holo-console:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(145deg,#ffffff0b,transparent 34%,#f4775a13 89%)}
+    .iv-console-header{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #c3e9ec25;padding-bottom:13px}
+    .iv-console-brand{display:flex;align-items:center;gap:4px;font-size:9px;color:#e7f6fa;letter-spacing:.16em;font-weight:700}
+    .iv-console-brand b{font-size:9px;color:#ff9b7b}
+    .iv-console-brand-symbol{font-size:23px;color:#f79070;margin-right:6px;line-height:1}
+    .iv-console-demo{color:#9de6bd;font-size:9px;font-weight:900;letter-spacing:.16em;background:#4cc19c22;border:1px solid #77deb750;padding:5px 8px;border-radius:30px}
+    .iv-holo-avatar-area{position:relative;width:200px;height:176px;margin:5px auto -1px;display:grid;place-items:center;perspective:400px}
+    .iv-holo-ring{position:absolute;border-radius:50%;width:168px;height:90px;border:1px solid #ffb58d88;transform:rotate(-24deg) rotateX(62deg);box-shadow:0 0 18px #e9a47728}
+    .iv-holo-ring-outer{width:192px;height:134px;border-color:#9bddf17a;animation:ivRingOrbit 9s linear infinite}
+    .iv-holo-ring-inner{animation:ivRingOrbitReverse 11s linear infinite;border-style:dashed}
+    .iv-holo-sphere{position:relative;display:grid;place-items:center;width:126px;height:126px;border-radius:50%;background:radial-gradient(circle at 28% 25%,#ffdac1 0%,#ffa17e 18%,#ea6d5a 42%,#b64c68 65%,#436d86 88%,#13354c 100%);box-shadow:0 0 40px #f176589c,0 0 95px #f176583d,inset -13px -13px 24px #09243a86,inset 9px 11px 19px #ffffff55;animation:ivOrbTurn 6.8s ease-in-out infinite}
+    .iv-holo-sphere svg{position:relative;width:68px;height:68px;opacity:.9;filter:drop-shadow(0 0 6px #fff8)}
+    .iv-holo-reflection{position:absolute;left:17%;top:9%;width:60%;height:34%;border-radius:70% 50% 55% 42%;background:linear-gradient(180deg,#ffffff80,transparent);filter:blur(8px)}
+    .iv-holo-spark{position:absolute;width:7px;height:7px;border-radius:50%;background:#b7edfc;box-shadow:0 0 14px #b8eeff}
+    .iv-holo-spark-one{left:23px;top:32px;animation:ivSparkFloat 4s ease-in-out infinite}
+    .iv-holo-spark-two{right:19px;bottom:24px;width:4px;height:4px;background:#ffba8c;animation:ivSparkFloat 4.6s ease-in-out -1.8s infinite}
+    .iv-holo-persona{display:flex;align-items:center;justify-content:center;gap:9px;font:800 22px 'Manrope',sans-serif;letter-spacing:.18em;color:#f4fafa}
+    .iv-persona-pulse{width:8px;height:8px;border-radius:50%;background:#71e5bb;box-shadow:0 0 0 5px #71e5bb23;animation:ivPersonaPulse 2.2s ease-in-out infinite}
+    .iv-holo-role{text-align:center;color:#b6d0de;font-size:10px;font-weight:600;margin:5px 0 12px}
+    .iv-holo-waves{height:42px;display:flex;align-items:center;justify-content:center;gap:3px;overflow:hidden;margin:0 auto 11px}
+    .iv-holo-waves i{display:block;flex:none;width:3px;height:var(--bar-h);background:linear-gradient(180deg,#82d8e4,#ff8c64);border-radius:5px;transform-origin:center;animation:ivWaveflow 1.35s ease-in-out var(--bar-d) infinite}
+    .iv-holo-conversation{display:grid;gap:7px;margin-top:3px}
+    .iv-holo-line{max-width:90%;padding:9px 11px;border-radius:11px;font-size:10px;line-height:1.4;letter-spacing:.003em;animation:ivChatCycle 12s ease-in-out infinite}
+    .iv-holo-line-assistant{color:#e8f6fc;background:#ffffff15;border:1px solid #b9dfed24;border-bottom-left-radius:3px;justify-self:start}
+    .iv-holo-line-user{color:#fff3ec;background:#d8735d54;border:1px solid #f6ac9255;border-bottom-right-radius:3px;justify-self:end;animation-delay:-4s}
+    .iv-holo-line:last-child{animation-delay:-8s}
+    .iv-stage-float{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:7px;min-height:35px;background:#f3f8f8;color:#254153;padding:8px 11px;border-radius:10px;box-shadow:0 12px 26px #03101b88;font-size:10px;font-weight:800;white-space:nowrap}
+    .iv-stage-float-urgent{left:-9px;top:25%;transform:rotate(-6deg);animation:ivFloatTag 5.3s ease-in-out infinite}
+    .iv-stage-float-summary{right:-9px;bottom:19%;transform:rotate(5deg);animation:ivFloatTag2 6.2s ease-in-out -1s infinite}
+    .iv-stage-float-icon{background:#ffe8d8;color:#cc613c;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;font-size:13px}
+    .iv-stage-float svg{width:17px;height:17px;color:#e16a48}
+    .iv-stage-caption{position:absolute;bottom:0;right:20px;text-align:right;font-size:9px;color:#9bb7c8;letter-spacing:.035em}
+    .voice-section .voice-demo{border-radius:15px;border:1px solid #e2ece8;box-shadow:0 25px 55px #0004;transition:box-shadow .25s}
+    .voice-section .voice-demo:focus-within{box-shadow:0 25px 55px #0004,0 0 0 2px #ff947377}
+    .voice-section .voice-demo-top{background:linear-gradient(120deg,#e9f1ee,#f9f4f0)}
+    .voice-section .voice-audio{border-radius:7px}
+    .voice-section .voice-bubble:last-child{animation:ivBubbleIn .3s ease-out both}
+    .voice-section .iv-demo-indicator{display:inline-flex;gap:10px;align-items:center;flex:none}
+    .voice-section .iv-demo-wave{display:flex;align-items:center;gap:3px;height:22px}
+    .voice-section .iv-demo-wave i{display:block;width:3px;height:14px;border-radius:5px;background:#e97551;transform:scaleY(.18);opacity:.5}
+    .voice-section .voice-demo.iv-audio-on .iv-demo-wave i{animation:ivBars 1.05s ease-in-out infinite;opacity:1}
+    .voice-section .iv-demo-wave i:nth-child(2){animation-delay:-.6s}.voice-section .iv-demo-wave i:nth-child(3){animation-delay:-.27s}.voice-section .iv-demo-wave i:nth-child(4){animation-delay:-.8s}.voice-section .iv-demo-wave i:nth-child(5){animation-delay:-.43s}
+    .voice-section .voice-demo #voiceMic.listening{animation:ivPersonaPulse 1.5s ease-in-out infinite}
+    @keyframes ivConsoleFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(1.7deg)}}
+    @keyframes ivOrbTurn{0%,100%{transform:rotate(-7deg) scale(.99)}50%{transform:rotate(9deg) scale(1.055)}}
+    @keyframes ivRingOrbit{0%{transform:rotate(-24deg) rotateX(63deg) rotateZ(0)}100%{transform:rotate(-24deg) rotateX(63deg) rotateZ(360deg)}}
+    @keyframes ivRingOrbitReverse{0%{transform:rotate(25deg) rotateX(65deg) rotateZ(360deg)}100%{transform:rotate(25deg) rotateX(65deg) rotateZ(0)}}
+    @keyframes ivAuraBreathe{0%,100%{opacity:.65;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+    @keyframes ivPersonaPulse{0%,100%{box-shadow:0 0 0 3px #71e5bb19}50%{box-shadow:0 0 0 9px #71e5bb10}}
+    @keyframes ivSparkFloat{0%,100%{transform:translate(0,0);opacity:.5}50%{transform:translate(8px,-12px);opacity:1}}
+    @keyframes ivWaveflow{0%,100%{transform:scaleY(.42)}30%{transform:scaleY(1.1)}60%{transform:scaleY(.62)}}
+    @keyframes ivBars{0%,100%{transform:scaleY(.23)}40%{transform:scaleY(.94)}}
+    @keyframes ivChatCycle{0%,8%,41%,100%{opacity:.54;transform:translateY(3px)}15%,32%{opacity:1;transform:translateY(0)}}
+    @keyframes ivFloatTag{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(-4deg)}}
+    @keyframes ivFloatTag2{0%,100%{transform:translateY(0) rotate(5deg)}50%{transform:translateY(10px) rotate(3deg)}}
+    @keyframes ivBubbleIn{from{opacity:.1;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:1100px){.iv-spotlight{column-gap:14px;padding:32px 29px}.iv-spotlight-stage{min-height:435px}.iv-spotlight-actions button,.iv-spotlight-actions a{width:100%;min-height:49px}.iv-spotlight-benefits{margin-top:18px}}
+    @media(max-width:800px){.iv-spotlight{grid-template-columns:1fr;grid-template-rows:auto auto auto;padding:28px 20px;row-gap:0;border-radius:18px}.iv-spotlight-copy{grid-column:1;grid-row:1;padding:0}.iv-spotlight-copy h3{font-size:clamp(36px,8vw,50px);margin-bottom:15px}.iv-spotlight-copy>p{font-size:14px}.iv-spotlight-eyebrow{margin-bottom:17px}.iv-spotlight-stage{grid-column:1;grid-row:2;min-height:388px;padding:12px 15px 20px;margin-top:6px}.iv-holo-console{max-width:305px;animation-duration:6.7s}.iv-spotlight-bottom{grid-column:1;grid-row:3;padding-top:14px}.iv-spotlight-actions{display:grid;grid-template-columns:1fr;gap:9px}.iv-spotlight-actions button,.iv-spotlight-actions a{min-height:50px;width:100%}.iv-spotlight-benefits{gap:7px;margin-top:18px}.iv-spotlight-benefits>span{font-size:10px}.iv-stage-float-urgent{left:0;top:22%}.iv-stage-float-summary{right:0;bottom:15%}.iv-stage-caption{right:10px}}
+    @media(max-width:390px){.iv-spotlight{padding:24px 15px}.iv-spotlight-stage{min-height:378px;padding-left:9px;padding-right:9px}.iv-holo-console{width:min(100%,280px);padding:17px}.iv-holo-avatar-area{height:158px}.iv-holo-sphere{width:108px;height:108px}.iv-stage-float{padding:7px;font-size:9px}.iv-stage-float-urgent{left:-3px}.iv-stage-float-summary{right:-3px}.iv-spotlight-benefits>span{font-size:9px;padding:6px 8px}}
+    @media(prefers-reduced-motion:reduce){.iv-spotlight *,.voice-section .voice-bubble:last-child,.voice-section .voice-demo.iv-audio-on .iv-demo-wave i,.voice-section .voice-demo #voiceMic.listening{animation:none!important;transition:none!important}.iv-holo-console{transform:none}.iv-holo-line{opacity:1!important;transform:none!important}}
   </style>
 </head>
 <body class="detail-page voice-detail">
@@ -324,11 +367,51 @@
           <p class="voice-lead" data-i18n="voiceLead">Il nostro centralino intelligente risponde alle richieste quando sei occupato o fuori orario, raccoglie le informazioni essenziali e le passa al tuo team. Il servizio si configura per ogni attività.</p>
         </div>
         <div class="voice-tags"><span data-i18n="voiceCat6">Idraulici</span><span data-i18n="voiceCat1">Studi dentistici</span><span data-i18n="voiceCat2">Fisioterapia</span><span data-i18n="voiceCat3">Centri estetici</span><span data-i18n="voiceCat4">Agenzie immobiliari</span><span data-i18n="voiceCat5">Officine</span></div>
-        <div class="iv-entrybar">
-          <div><strong data-i18n="ivEntryTitle">Ascolta Giulia. Poi immaginala al tuo telefono.</strong><p data-i18n="ivEntryDesc">Prima prova la voce femminile nella simulazione. Se vuoi, prepariamo una demo con il nome della tua attività.</p></div>
-          <div class="iv-entry-buttons"><button type="button" id="ivTryVoice" data-i18n="ivEntryTry">▶ Prova Giulia con la voce</button><a href="#voice-lead-form" data-i18n="ivEntryCustom">Richiedi demo su misura</a></div>
+
+        <div class="iv-spotlight" id="innova-voice-spotlight">
+          <div class="iv-spotlight-copy">
+            <div class="iv-spotlight-eyebrow"><span class="iv-eyebrow-mark" aria-hidden="true"></span><span data-i18n="ivSpotBadge">INNOVA VOICE / DEMO VOCALE</span></div>
+            <h3 data-i18n-html="ivSpotTitle">Ascolta Giulia<br><em>in azione.</em></h3>
+            <p data-i18n="ivSpotText">Prova una simulazione del nostro centralino AI: Giulia fa le domande giuste, distingue le urgenze e prepara un riepilogo. Tu continui a lavorare.</p>
+          </div>
+          <div class="iv-spotlight-stage" aria-hidden="true">
+            <span class="iv-stage-aura iv-stage-aura-one"></span><span class="iv-stage-aura iv-stage-aura-two"></span>
+            <div class="iv-holo-console">
+              <div class="iv-console-header"><span class="iv-console-brand"><span class="iv-console-brand-symbol">◈</span> INNOVA <b>VOICE</b></span><span class="iv-console-demo" data-i18n="ivSpotDemoLabel">DEMO</span></div>
+              <div class="iv-holo-avatar-area">
+                <span class="iv-holo-ring iv-holo-ring-outer"></span>
+                <span class="iv-holo-ring iv-holo-ring-inner"></span>
+                <span class="iv-holo-spark iv-holo-spark-one"></span>
+                <span class="iv-holo-spark iv-holo-spark-two"></span>
+                <div class="iv-holo-sphere"><span class="iv-holo-reflection"></span><svg viewBox="0 0 100 100" focusable="false"><path d="M20 50h10l6-16 9 32 10-43 10 54 9-27h7" fill="none" stroke="#fff3e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              </div>
+              <div class="iv-holo-persona">GIULIA <span class="iv-persona-pulse"></span></div>
+              <div class="iv-holo-role" data-i18n="ivSpotRole">Assistente AI · anteprima</div>
+              <div class="iv-holo-waves"><i style="--bar-h:12px;--bar-d:-0.00s"></i><i style="--bar-h:19px;--bar-d:-0.13s"></i><i style="--bar-h:30px;--bar-d:-0.26s"></i><i style="--bar-h:15px;--bar-d:-0.39s"></i><i style="--bar-h:25px;--bar-d:-0.52s"></i><i style="--bar-h:38px;--bar-d:-0.65s"></i><i style="--bar-h:23px;--bar-d:-0.78s"></i><i style="--bar-h:34px;--bar-d:-0.91s"></i><i style="--bar-h:18px;--bar-d:-1.04s"></i><i style="--bar-h:43px;--bar-d:-1.17s"></i><i style="--bar-h:28px;--bar-d:-1.30s"></i><i style="--bar-h:16px;--bar-d:-1.43s"></i><i style="--bar-h:37px;--bar-d:-1.56s"></i><i style="--bar-h:24px;--bar-d:-1.69s"></i><i style="--bar-h:41px;--bar-d:-1.82s"></i><i style="--bar-h:20px;--bar-d:-1.95s"></i><i style="--bar-h:29px;--bar-d:-2.08s"></i><i style="--bar-h:35px;--bar-d:-2.21s"></i><i style="--bar-h:14px;--bar-d:-2.34s"></i><i style="--bar-h:24px;--bar-d:-2.47s"></i><i style="--bar-h:13px;--bar-d:-2.60s"></i></div>
+              <div class="iv-holo-conversation">
+                <div class="iv-holo-line iv-holo-line-assistant"><span data-i18n="ivSpotLine1">Buongiorno! Come posso aiutarla?</span></div>
+                <div class="iv-holo-line iv-holo-line-user"><span data-i18n="ivSpotLine2">Ho una perdita d'acqua.</span></div>
+                <div class="iv-holo-line iv-holo-line-assistant"><span data-i18n="ivSpotLine3">Capisco. Si tratta di un'urgenza?</span></div>
+              </div>
+            </div>
+            <div class="iv-stage-float iv-stage-float-urgent"><span class="iv-stage-float-icon">!</span><span data-i18n="ivSpotFloat1">Priorità riconosciute</span></div>
+            <div class="iv-stage-float iv-stage-float-summary"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 4h10l3 3v13H4V4h3m1 6h8m-8 4h8m-8 4h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span data-i18n="ivSpotFloat2">Riepilogo pronto</span></div>
+            <span class="iv-stage-caption" data-i18n="ivSpotVisualNote">Anteprima animata illustrativa</span>
+          </div>
+          <div class="iv-spotlight-bottom">
+            <div class="iv-spotlight-actions">
+              <button type="button" id="ivTryVoice" class="iv-spotlight-primary"><span class="iv-spotlight-play"><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="m9 5 11 7-11 7z"/></svg></span><span data-i18n="ivEntryTry">Prova la demo vocale</span><svg class="iv-svg-arrow" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5M9 5h10v10"/></svg></button>
+              <a href="#voice-lead-form" class="iv-spotlight-secondary"><span data-i18n="ivEntryCustom">Richiedi demo su misura</span><svg class="iv-svg-arrow" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5M9 5h10v10"/></svg></a>
+            </div>
+            <div class="iv-spotlight-benefits">
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h2l2-5 3 10 3-5h2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ivSpotBenefit1">Voce naturale</span></span>
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 17 16H3Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/><path d="M10 8v3m0 2v.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span data-i18n="ivSpotBenefit2">Gestione urgenze</span></span>
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3h10v14H5zM8 7h4M8 10h4M8 13h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg><span data-i18n="ivSpotBenefit3">Richieste ordinate</span></span>
+            </div>
+            <p class="iv-spotlight-footnote" data-i18n="ivSpotFootnote">La prova è una simulazione guidata con voce registrata, non una telefonata reale.</p>
+          </div>
         </div>
-        <div class="voice-grid">
+                <div class="voice-grid">
           <div class="voice-value">
             <h3 data-i18n="voiceHowTitle">Un assistente, tre compiti concreti.</h3>
             <div class="voice-steps">
@@ -1089,9 +1172,19 @@
       }finally{ivLeadSubmit.disabled=false;}
     });
     Object.assign(i18n.it,{
-      ivEntryTitle:'Ascolta Giulia. Poi immaginala al tuo telefono.',
-      ivEntryDesc:'Prima prova la voce femminile nella simulazione. Se vuoi, prepariamo una demo con il nome della tua attività.',
-      ivEntryTry:'▶ Prova Giulia con la voce',ivEntryCustom:'Richiedi demo su misura',
+      ivEntryTry:'Prova la demo vocale',ivEntryCustom:'Richiedi demo su misura',
+      ivSpotBadge:'INNOVA VOICE / DEMO VOCALE',
+      ivSpotTitle:'Ascolta Giulia<br><em>in azione.</em>',
+      ivSpotText:'Prova una simulazione del nostro centralino AI: Giulia fa le domande giuste, distingue le urgenze e prepara un riepilogo. Tu continui a lavorare.',
+      ivSpotDemoLabel:'DEMO',
+      ivSpotRole:'Assistente AI · anteprima',
+      ivSpotLine1:'Buongiorno! Come posso aiutarla?',
+      ivSpotLine2:"Ho una perdita d'acqua.",
+      ivSpotLine3:"Capisco. Si tratta di un'urgenza?",
+      ivSpotFloat1:'Priorità riconosciute',ivSpotFloat2:'Riepilogo pronto',
+      ivSpotVisualNote:'Anteprima animata illustrativa',
+      ivSpotBenefit1:'Voce naturale',ivSpotBenefit2:'Gestione urgenze',ivSpotBenefit3:'Richieste ordinate',
+      ivSpotFootnote:'La prova è una simulazione guidata con voce registrata, non una telefonata reale.',
       ivLeadKicker:'IL PROSSIMO PASSO',ivLeadTitle:'Facciamo rispondere Giulia <span>per la tua attività.</span>',
       ivLeadDesc:'Raccontaci cosa fai e come ricevi le chiamate. Ti contattiamo per preparare una prova guidata con il nome della tua impresa e le domande tipiche dei tuoi clienti.',
       ivLeadPoint1:'Demo personalizzata, senza impegno di acquisto',ivLeadPoint2:'Confronto su orari, urgenze e chiamate perse',
@@ -1108,9 +1201,19 @@
       ivSubmitText:'Richiedi una demo gratuita'
     });
     Object.assign(i18n.fr,{
-      ivEntryTitle:'Écoutez Giulia. Imaginez-la répondre au téléphone.',
-      ivEntryDesc:"Testez d'abord la voix féminine dans la simulation. Nous pouvons ensuite préparer une démo au nom de votre entreprise.",
-      ivEntryTry:'▶ Écouter Giulia (italien)',ivEntryCustom:'Demander une démo sur mesure',
+      ivEntryTry:'Écouter la démo vocale (italien)',ivEntryCustom:'Demander une démo sur mesure',
+      ivSpotBadge:'INNOVA VOICE / DÉMO VOCALE',
+      ivSpotTitle:'Écoutez Giulia<br><em>en action.</em>',
+      ivSpotText:"Essayez une simulation de notre standard IA : Giulia pose des questions, identifie les urgences et prépare un compte rendu. Vous restez concentré sur votre travail.",
+      ivSpotDemoLabel:'DÉMO',
+      ivSpotRole:'Assistante IA · aperçu',
+      ivSpotLine1:'Bonjour ! Comment puis-je vous aider ?',
+      ivSpotLine2:"J'ai une fuite d'eau.",
+      ivSpotLine3:"Je comprends. Est-ce urgent ?",
+      ivSpotFloat1:'Priorités identifiées',ivSpotFloat2:'Compte rendu prêt',
+      ivSpotVisualNote:'Aperçu animé illustratif',
+      ivSpotBenefit1:'Voix naturelle',ivSpotBenefit2:'Gestion des urgences',ivSpotBenefit3:'Demandes organisées',
+      ivSpotFootnote:"Le test est une simulation guidée avec voix préenregistrée en italien, pas un vrai appel.",
       ivLeadKicker:'LA PROCHAINE ÉTAPE',ivLeadTitle:'Configurons Giulia <span>pour votre activité.</span>',
       ivLeadDesc:"Expliquez-nous votre activité et vos appels les plus fréquents. Nous vous contacterons pour organiser une simulation personnalisée.",
       ivLeadPoint1:"Démo personnalisée, sans obligation d'achat",ivLeadPoint2:'Échange sur les horaires, les urgences et les appels manqués',
@@ -1132,33 +1235,6 @@
       if(area)area.placeholder=i18n[voiceLanguage()].ivNotesPlaceholder;
     }));
 
-
-    // Reveal only after progressive enhancement is available: page stays readable with JS off.
-    (function enableInnovaVoiceMotion(){
-      if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      const targets=document.querySelectorAll(
-        '.voice-section .voice-head,.voice-section .voice-tags,.voice-section .iv-entrybar,'+
-        '.voice-section .voice-value,.voice-section .voice-demo,.voice-section .voice-expand-intro,'+
-        '.voice-section .voice-feature-item,.voice-section .voice-sector-head,.voice-section .voice-sector-item,'+
-        '.voice-section .voice-snapshot-copy,.voice-section .voice-snapshot-card,'+
-        '.voice-section .voice-setup-head,.voice-section .voice-setup-grid>div,'+
-        '.voice-section .voice-faq-head,.voice-section .voice-faq-list,'+
-        '.voice-section .iv-lead-copy,.voice-section .iv-lead-form,.voice-section .voice-roi,.voice-section .voice-plans'
-      );
-      const observer=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(!entry.isIntersecting)return;
-          entry.target.classList.add('iv-in-view');
-          observer.unobserve(entry.target);
-        });
-      },{threshold:.12,rootMargin:'0px 0px -18px 0px'});
-      targets.forEach((node,i)=>{
-        node.classList.add('iv-reveal');
-        node.style.setProperty('--iv-delay',((i%4)*60)+'ms');
-        observer.observe(node);
-      });
-      document.documentElement.classList.add('iv-motion-ready');
-    })();
 
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
     renderVoice();updateVoiceRoi();
