@@ -209,3 +209,22 @@
 .home-page .hero .hero-chiprow a.hero-area-link{
  width:auto;min-height:40px;gap:8px;
 }
+
+/* Swipeable call/chat preview in the AI project card. */
+.home-page .ai-preview-carousel{background:#c5e1e5;touch-action:pan-y}
+.home-page .ai-preview-track{display:flex;width:200%;height:100%;transition:transform .65s ease}
+.home-page .ai-preview-track .ai-preview-slide{position:relative;flex:0 0 50%;width:50%;height:100%;min-width:0;overflow:hidden}
+.home-page .ai-preview-chat{padding:16px 18px 52px;background:linear-gradient(130deg,#dfefee,#bfdce2);color:#173949}
+.home-page .ai-mini-head{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.08em;margin-bottom:8px}
+.home-page .ai-mini-head>span{font-size:9px;background:#ffffffaa;padding:4px 8px;border-radius:20px}
+.home-page .ai-mini-feed{height:calc(100% - 29px);overflow:auto;display:flex;flex-direction:column;gap:6px;scrollbar-width:thin}
+.home-page .ai-mini-message{flex:none;max-width:88%;padding:7px 10px;border-radius:12px;font-size:11px;line-height:1.4;background:#fff}
+.home-page .ai-mini-message.customer{align-self:flex-end;background:#21485b;color:white;border-bottom-right-radius:3px}
+.home-page .ai-mini-message.assistant{align-self:flex-start;border-bottom-left-radius:3px}
+.home-page .ai-mini-message.result{background:#d6eee1;color:#285940;align-self:center;font-size:10px}
+.home-page .ai-preview-controls{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;background:#f5faf4ed;padding:4px;border-radius:22px;z-index:5;white-space:nowrap}
+.home-page .ai-preview-controls button{min-height:30px;border:0;background:transparent;border-radius:18px;padding:6px 12px;font-size:11px;font-weight:700;color:#315267;cursor:pointer}
+.home-page .ai-preview-controls button[aria-pressed="true"]{background:#21485b;color:#fff}
+.home-page .ai-preview-controls button:focus-visible{outline:2px solid #f1663b;outline-offset:2px}
+.home-page .ai-preview-track .ai-console{top:16px;min-height:180px}
+@media(prefers-reduced-motion:reduce){.home-page .ai-preview-track{transition:none}}
