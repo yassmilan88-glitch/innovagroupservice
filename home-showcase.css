@@ -360,3 +360,39 @@
 .home-page .ai-parallel-visual strong{font-size:31px}
 }
 @media(prefers-reduced-motion:reduce){.home-page .ai-parallel-lines i{animation:none!important}}
+
+/* Innova / Fuel — fourth project showcase, 2026-10-30 */
+.home-page .premium-hub .feature-fuel{grid-column:1/-1;min-height:410px;flex-direction:row;align-items:stretch;background:radial-gradient(ellipse 52% 82% at 83% 48%,#28627a 0%,transparent 80%),linear-gradient(112deg,#0a1e2d,#173a50 77%,#1e4657);border-color:#527689;color:#f5fbfe}
+.home-page .premium-hub .feature-fuel:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 32px,#9dcee60a 33px 34px),repeating-linear-gradient(90deg,transparent 0 32px,#9dcee60a 33px 34px);z-index:-1}
+.home-page .premium-hub .feature-fuel .hub-card-copy{flex:0 1 54%;justify-content:center;padding:18px 0}
+.home-page .premium-hub .feature-fuel .hub-index{color:#ffaa85}
+.home-page .premium-hub .feature-fuel h3{font-size:clamp(28px,3.3vw,45px);max-width:570px;color:#fff;margin:24px 0 15px}
+.home-page .premium-hub .feature-fuel p{color:#bed1da;max-width:525px;margin-bottom:22px}
+.home-page .premium-hub .feature-fuel .hub-card-link{color:#ffad86}
+.home-page .premium-hub .feature-fuel .hub-arrow{border-color:#ffad8670;color:#ffb38e}
+.home-page .premium-hub .feature-fuel .hub-details>span{background:#ffffff0e;border-color:#a5cbd245;color:#dce9ee}
+.home-page .fuel-card-orbit{position:absolute;right:4%;top:6%;width:42%;aspect-ratio:1;border:1px solid #97b8c034;border-radius:50%;pointer-events:none;animation:innovaSpin 55s linear infinite}
+.home-page .fuel-card-orbit:after{content:"";position:absolute;inset:18%;border:1px dashed #ffaf8b60;border-radius:50%}
+.home-page .fuel-card-art{position:absolute;right:3%;top:16%;width:43%;height:75%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.home-page .fuel-card-art svg{position:relative;z-index:1;width:100%;max-height:100%;filter:drop-shadow(0 18px 27px #0008);transition:transform .6s ease}
+.home-page .feature-fuel:hover .fuel-card-art svg{transform:translateY(-7px)}
+.home-page .fuel-art-label,.home-page .fuel-art-bottom{position:absolute;color:#bbd4db;font:800 9px 'Manrope',sans-serif;letter-spacing:.16em}
+.home-page .fuel-art-label{top:-4%;right:3%;color:#ffb68f}
+.home-page .fuel-art-bottom{bottom:-4%;right:5%}
+.home-page .fuel-art-flow{animation:innovaFlow 6s linear infinite}
+@media(max-width:860px){
+ .home-page .premium-hub .feature-fuel{min-height:650px;display:flex;flex-direction:column}
+ .home-page .premium-hub .feature-fuel .hub-card-copy{flex:1;justify-content:flex-end;padding:280px 0 14px;max-width:100%}
+ .home-page .fuel-card-art{top:25px;left:5%;right:5%;width:90%;height:245px}
+ .home-page .fuel-card-orbit{top:0;right:26%;width:48%}
+ .home-page .fuel-art-label{top:1%}
+ .home-page .fuel-art-bottom{bottom:-1%}
+}
+@media(max-width:480px){
+ .home-page .premium-hub .feature-fuel{min-height:680px}
+ .home-page .premium-hub .feature-fuel .hub-card-copy{padding-top:260px}
+ .home-page .fuel-card-art{height:210px}
+ .home-page .premium-hub .feature-fuel h3{font-size:31px}
+ .home-page .premium-hub .feature-fuel p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.home-page .fuel-card-orbit,.home-page .fuel-art-flow{animation:none!important}}
