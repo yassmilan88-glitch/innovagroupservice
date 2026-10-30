@@ -180,3 +180,23 @@
 @media(prefers-reduced-motion:reduce){
  .home-page .hero .hero-chiprow a.hero-area-link{transition:none}
 }
+
+/* Four compact labels: no outer frames, rounded inner buttons. */
+.home-page .hero .hero-chiprow a.hero-area-link{
+ border:0;background:transparent;padding:0;min-height:44px;
+}
+.home-page .hero .hero-chiprow a.hero-area-link > span{
+ border:1px solid #a1baca55;border-radius:14px;
+ padding:10px 12px;min-height:40px;max-width:100%;
+ color:inherit;font:inherit;letter-spacing:inherit;
+}
+.home-page .hero .hero-chiprow a.hero-area-link:hover,
+.home-page .hero .hero-chiprow a.hero-area-link:focus-visible{
+ background:transparent;border:0;outline:none;
+}
+.home-page .hero .hero-chiprow a.hero-area-link:hover > span{
+ border-color:#ff9b53;background:#ffffff14;
+}
+.home-page .hero .hero-chiprow a.hero-area-link:focus-visible > span{
+ outline:2px solid #ff9b53;outline-offset:3px;
+}
