@@ -286,13 +286,34 @@
 .home-page .hero-motion-caption span{display:block;width:60px;height:7px;margin-top:4px;border-top:1px solid #8fb1c673;border-bottom:1px solid #8fb1c647}
 </style>
 <link rel="stylesheet" href="/richieste.css">
+
+<style>
+  .home-page .nav-links{gap:17px}
+  .marketing-home{display:grid;grid-template-columns:1.2fr .8fr;min-height:360px;margin-top:16px;background:#162c3d;color:#fff;border:1px solid #36566b;overflow:hidden;transition:transform .25s,border-color .25s}
+  .marketing-home:hover{transform:translateY(-3px);border-color:#f1663b99}
+  .marketing-home-copy{padding:48px 52px;display:flex;flex-direction:column;align-items:flex-start}
+  .marketing-home-kicker{color:#f78d6c;font:800 10px 'Manrope',sans-serif;letter-spacing:.18em}
+  .marketing-home h3{font:800 clamp(31px,3vw,46px)/1.13 'Manrope',sans-serif;letter-spacing:-.05em;margin:20px 0 12px}
+  .marketing-home p{font-size:14px;line-height:1.7;color:#b7c8d3;max-width:590px;margin:0}
+  .marketing-home-link{display:inline-flex;gap:18px;align-items:center;margin-top:auto;padding-top:20px;color:#fff;font-size:12px;font-weight:800}
+  .marketing-home-link span:last-child{color:#ff9470;font-size:22px}
+  .marketing-home-art{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,#33576b 0%,#193649 47%,#102a3d 75%);display:flex;align-items:center;justify-content:center}
+  .marketing-home-orbit{position:absolute;width:280px;height:280px;border:1px solid #b1d2e24c;border-radius:50%;box-shadow:0 0 0 52px #a8ccdb16,0 0 0 103px #a8ccdb0a;animation:marketingPulse 5s ease-in-out infinite}
+  .marketing-home-chip{position:relative;z-index:1;width:192px;height:192px;border:2px solid #ff9470;border-radius:26px;transform:rotate(-8deg);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 15px 32px #081822aa,0 0 0 10px #ff805a18;background:linear-gradient(145deg,#203d50,#0a1c2a)}
+  .marketing-home-waves{font-size:34px;color:#ff966f;line-height:1}.marketing-home-chip strong{font:800 55px 'Manrope',sans-serif;letter-spacing:-.07em}.marketing-home-chip small{font-size:7px;letter-spacing:.12em;color:#a9c3d2;text-align:center}
+  .marketing-home-art-label{position:absolute;bottom:22px;color:#a9c0ce;font-size:9px;letter-spacing:.14em;font-weight:800}
+  @keyframes marketingPulse{50%{box-shadow:0 0 0 75px #a8ccdb12,0 0 0 123px #a8ccdb06}}
+  @media(max-width:1280px) and (min-width:761px){.home-page .nav-links{display:none}.home-page .mobile-menu{display:block}.home-page .nav-links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:16px 26px;background:#152638;box-shadow:0 20px 40px #0c18268a}.home-page .nav-links.open a{padding:13px;border-bottom:1px solid #ffffff15}}
+  @media(max-width:760px){.marketing-home{grid-template-columns:1fr}.marketing-home-copy{padding:34px 25px}.marketing-home h3{font-size:34px}.marketing-home-art{min-height:255px}.marketing-home-chip{width:160px;height:160px}.marketing-home-chip strong{font-size:47px}}
+  @media(prefers-reduced-motion:reduce){.marketing-home-orbit{animation:none}}
+</style>
 </head>
 <body class="home-page">
   <header class="site-header">
     <div class="container nav-inner">
       <a href="/" class="brand" aria-label="Innova Group Service - Home"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="brand-text">INNOVA<small>GROUP SERVICE SRL</small></span></a>
       <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
-        <a href="/azienda.html" data-i18n="navAbout">Azienda</a><a href="/robotica.html" data-i18n="navRobotics">Robotica</a><a href="/progetti.html" data-i18n="navAreas">Progetti</a><a href="/centralino-ai.html" data-i18n="navVoice">AI per le aziende</a><a href="/energia-terreni.html">Energia &amp; Terreni</a><a href="/carburanti.html" data-i18n="navFuel">Prodotti petroliferi</a><a href="/partner.html" data-i18n="navPartners">Partner</a>
+        <a href="/azienda.html" data-i18n="navAbout">Azienda</a><a href="/robotica.html" data-i18n="navRobotics">Robotica</a><a href="/progetti.html" data-i18n="navAreas">Progetti</a><a href="/centralino-ai.html" data-i18n="navVoice">AI per le aziende</a><a href="/marketing-pmi.html" data-i18n="navMarketing">Marketing PMI</a><a href="/energia-terreni.html">Energia &amp; Terreni</a><a href="/carburanti.html" data-i18n="navFuel">Prodotti petroliferi</a><a href="/partner.html" data-i18n="navPartners">Partner</a>
       </nav>
       <div class="nav-actions"><div class="lang-switch" aria-label="Lingua"><button class="active" data-lang="it" aria-pressed="true">IT</button><button data-lang="fr" aria-pressed="false">FR</button></div><a class="header-cta" href="/#modulo"><span data-i18n="navContact">Contattaci</span><svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11"/></svg></a><button class="mobile-menu" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">☰</button></div>
     </div>
@@ -453,6 +474,19 @@
         </div>
       </a>
     </div>
+    <a class="marketing-home" href="/marketing-pmi.html" aria-label="Scopri marketing per PMI e il progetto Wine Story">
+      <div class="marketing-home-copy">
+        <span class="marketing-home-kicker" data-i18n="hubMarketingTag">05 / MARKETING &amp; INNOVAZIONE</span>
+        <h3 data-i18n-html="hubMarketingTitle">Ogni prodotto ha una storia.<br>Facciamola scoprire.</h3>
+        <p data-i18n="hubMarketingDesc">Stiamo studiando video, esperienze digitali e packaging interattivo NFC/QR per piccole e medie imprese. Il primo concept è Wine Story, pensato per il mondo del vino.</p>
+        <span class="marketing-home-link"><span data-i18n="hubMarketingLink">Esplora il marketing per PMI</span><span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="marketing-home-art" aria-hidden="true">
+        <div class="marketing-home-orbit"></div>
+        <div class="marketing-home-chip"><span class="marketing-home-waves">◉</span><strong>NFC</strong><small>WINE STORY / DIGITAL EXPERIENCE</small></div>
+        <span class="marketing-home-art-label">BOTTIGLIA → CONTENUTO → RELAZIONE</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -1284,6 +1318,23 @@
     Object.assign(i18n.fr,{
       heroAreaRobot:'Robotique',heroAreaAi:'IA pour les entreprises',
       heroAreaEnergy:'Énergie',heroAreaFuel:'Produits pétroliers B2B'
+    });
+
+    Object.assign(i18n.it,{
+      navMarketing:'Marketing PMI',
+      hubIntro:'Cinque aree di sviluppo, un’unica visione: portare tecnologia e nuove opportunità alle imprese e al territorio. Ogni progetto ha il proprio spazio dedicato.',
+      hubMarketingTag:'05 / MARKETING & INNOVAZIONE',
+      hubMarketingTitle:'Ogni prodotto ha una storia.<br>Facciamola scoprire.',
+      hubMarketingDesc:'Stiamo studiando video, esperienze digitali e packaging interattivo NFC/QR per piccole e medie imprese. Il primo concept è Wine Story, pensato per il mondo del vino.',
+      hubMarketingLink:'Esplora il marketing per PMI'
+    });
+    Object.assign(i18n.fr,{
+      navMarketing:'Marketing PME',
+      hubIntro:'Cinq axes de développement, une même vision : apporter technologie et nouvelles opportunités aux entreprises et aux territoires. Chaque projet possède sa propre page.',
+      hubMarketingTag:'05 / MARKETING & INNOVATION',
+      hubMarketingTitle:'Chaque produit a une histoire.<br>Faisons-la découvrir.',
+      hubMarketingDesc:'Nous explorons la vidéo, les expériences numériques et les emballages interactifs NFC/QR pour les PME. Premier concept : Wine Story, dédié au vin.',
+      hubMarketingLink:'Découvrir le marketing pour PME'
     });
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
     renderVoice();updateVoiceRoi();
