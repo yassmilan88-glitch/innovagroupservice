@@ -1,1 +1,111 @@
 svg.arrow-icon{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}article:not(:has(a,button))>.card-arrow{display:none}.igs-request{background:#142638;color:white;padding:clamp(28px,6vw,72px) 6%;scroll-margin-top:6rem}.igs-request form,.igs-request nav,.igs-request h2{max-width:760px;margin:0 auto 1rem}.igs-request nav{display:flex;gap:.85rem;flex-wrap:wrap}.igs-request a{color:white;text-decoration:underline}.igs-request form{display:grid;gap:1rem}.igs-request label{display:grid;gap:.35rem}.igs-request input,.igs-request textarea{padding:.8rem;border:1px solid #a4b4bd;border-radius:.5rem;font:inherit;color:#142638;background:white;width:100%;box-sizing:border-box}.igs-request button{justify-self:start;padding:.8rem 1.5rem;background:white;color:#142638;border:0;border-radius:2rem;font:inherit;font-weight:700;cursor:pointer}html:not([lang^=fr]) .igs-request [lang=fr],html[lang^=fr] .igs-request [lang=it],.igs-request [hidden]{display:none}
+
+
+/* Innova motion system — clear calls to action, accessible by design */
+.site-header .header-cta{
+  position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(115deg,#ff815b,#e85b34);color:#fff;
+  border:1px solid #ffb28f;border-radius:999px;
+  box-shadow:0 0 0 1px #ffffff17,0 8px 24px #e85b3440;
+  transform-origin:center;transition:background .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+.site-header .header-cta::after{
+  content:"";position:absolute;inset:-5px;border:1px solid #ffb18b;
+  border-radius:inherit;opacity:0;pointer-events:none;
+}
+.site-header .header-cta:hover,.site-header .header-cta:focus-visible{
+  background:linear-gradient(115deg,#ff9875,#f1663b);
+  box-shadow:0 0 0 1px #ffffff30,0 10px 30px #f1663b80;
+  transform:translateY(-2px);
+}
+.site-header .header-cta:focus-visible,
+.nav-links a:focus-visible,
+.btn-primary:focus-visible,
+.contact-btn:focus-visible{
+  outline:2px solid #ffb28f;outline-offset:4px;
+}
+@keyframes innovaContactVibrate{
+  0%,71%,81%,100%{transform:translateX(0) rotate(0)}
+  73%{transform:translateX(-3px) rotate(-1deg)}
+  75%{transform:translateX(3px) rotate(1deg)}
+  77%{transform:translateX(-2px) rotate(-.7deg)}
+  79%{transform:translateX(2px) rotate(.7deg)}
+}
+@keyframes innovaContactRing{
+  0%,70%,81%,100%{opacity:0;transform:scale(.97)}
+  73%{opacity:.75;transform:scale(1.015)}
+  80%{opacity:0;transform:scale(1.15)}
+}
+
+/* Main navigation: a short underline shows where the link leads. */
+.site-header .nav-links a{position:relative;transition:color .2s ease}
+.site-header .nav-links a::after{
+  content:"";position:absolute;bottom:-7px;left:0;width:100%;height:2px;
+  border-radius:2px;background:#ff9a6e;transform:scaleX(0);
+  transform-origin:left;transition:transform .26s ease;
+}
+.site-header .nav-links a:hover::after,
+.site-header .nav-links a:focus-visible::after{transform:scaleX(1)}
+.site-header .nav-links a:hover{color:#ffb18b}
+
+/* Service tiles and project links react clearly to interaction. */
+.home-page .quick-sections a,
+.home-page .premium-hub .hub-card-link,
+.home-page .directory-card .directory-arrow,
+.igs-request nav a,
+.btn-primary,.contact-btn{
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease,color .25s ease;
+}
+.home-page .quick-sections a:hover,
+.home-page .quick-sections a:focus-visible{
+  transform:translateY(-3px);border-color:#ec754f;
+  box-shadow:0 8px 18px #142e3d22;
+}
+.home-page .premium-hub a.hub-card:hover,
+.home-page .premium-hub a.hub-card:focus-visible{
+  transform:translateY(-5px);
+  box-shadow:0 26px 52px #142b3930;
+}
+.home-page .premium-hub .hub-card:hover .hub-arrow,
+.home-page .premium-hub .hub-card:focus-within .hub-arrow{
+  transform:translate(3px,-2px);
+  box-shadow:0 5px 15px #f1663b45;
+}
+.home-page .directory-card:hover .directory-arrow,
+.home-page .directory-card:focus-visible .directory-arrow{transform:translate(3px,-2px) scale(1.07)}
+.btn-primary:hover,.btn-primary:focus-visible,
+.contact-btn:hover,.contact-btn:focus-visible{
+  transform:translateY(-3px);box-shadow:0 12px 28px #f1663b55;
+}
+.igs-request nav a:hover,.igs-request nav a:focus-visible{color:#ffb18b}
+.contact-email:hover,.contact-email:focus-visible{text-decoration:underline;text-underline-offset:5px}
+
+/* On phones the header CTA used to disappear: keep contact available at all times. */
+@media(max-width:760px){
+  body .site-header .header-cta{
+    display:inline-flex;position:fixed;right:16px;
+    bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    z-index:100;min-height:47px;padding:12px 17px;
+    background:linear-gradient(115deg,#ff865f,#e85b34);
+    color:#fff;border-color:#ffc3a7;
+    box-shadow:0 8px 24px #11263775,0 0 0 2px #ffffff3d;
+  }
+  .site-header .nav-links a::after{bottom:4px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .site-header .header-cta{animation:innovaContactVibrate 7s ease-in-out infinite}
+  .site-header .header-cta::after{animation:innovaContactRing 7s ease-out infinite}
+  .site-header .header-cta:hover,
+  .site-header .header-cta:focus-visible{animation:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header .header-cta,.site-header .header-cta::after,
+  .home-page .quick-sections a,.home-page .premium-hub .hub-card-link,
+  .home-page .directory-card .directory-arrow,
+  .btn-primary,.contact-btn,.site-header .nav-links a::after{
+    animation:none!important;transition:none!important;
+  }
+  .site-header .header-cta:hover,.site-header .header-cta:focus-visible,
+  .home-page .quick-sections a:hover,.home-page .premium-hub a.hub-card:hover,
+  .btn-primary:hover,.contact-btn:hover{transform:none}
+}
