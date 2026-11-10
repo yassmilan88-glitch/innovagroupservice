@@ -188,6 +188,22 @@
 .handshake-visual{width:min(94%,620px);height:auto;position:relative;z-index:2;overflow:visible;filter:drop-shadow(0 20px 32px #06101965)}.handshake-motion{transform-origin:320px 275px;animation:handshake 1.8s ease-in-out infinite}.handshake-tagline{position:absolute;z-index:3;top:18px;left:0;right:0;text-align:center;color:#f7f6f2;font:800 clamp(12px,1.5vw,17px)/1 'Manrope',sans-serif;letter-spacing:.22em}.project-image{isolation:isolate}@keyframes handshake{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@media(prefers-reduced-motion:reduce){.handshake-motion{animation:none}}.brand-symbol{display:none!important}.brand-symbol,.brand-mark,.brand-icon{display:grid!important;width:22px;height:22px;grid-template-columns:repeat(2,1fr);gap:2px;transform:none;flex:none;overflow:hidden}.brand-symbol span,.brand-mark i,.brand-icon span{display:block!important;background:#fff!important;opacity:1!important;border-radius:1px!important}/* Innova logo: four white squares */.brand-symbol span:nth-child(1),.brand-symbol span:nth-child(4),.brand-mark i:nth-child(1),.brand-mark i:nth-child(4),.brand-icon span:nth-child(1),.brand-icon span:nth-child(4){background:#e65329!important}.brand-symbol span:nth-child(2),.brand-symbol span:nth-child(3),.brand-mark i:nth-child(2),.brand-mark i:nth-child(3),.brand-icon span:nth-child(2),.brand-icon span:nth-child(3){background:#fff!important}/* Logo arancione/bianco alternato */.brand-symbol,.brand-mark,.brand-icon{width:24px;height:24px;gap:4px}.brand-symbol span,.brand-mark i,.brand-icon span{border-radius:3px!important}/* Quadrati logo più distanziati e stondati */.brand-symbol,.brand-mark,.brand-icon{transform:rotate(-7deg)}/* Inclinazione lieve del marchio */.brand-text,.brand>span:last-child{color:#f1663b!important}.brand-text small,.brand>span:last-child small{color:#aebbc2!important}.brand>span:last-child>span{color:#aebbc2!important}/* Colorazione distinta per nome e payoff */.robot-visual{width:min(90%,540px);height:auto;position:relative;z-index:2;overflow:visible;filter:drop-shadow(0 20px 32px #06101965)}.robot-visual .orbit{transform-origin:455px 405px;transform-box:view-box;animation:orbit 35s linear infinite}.robot-visual .planet-orbit{transform-origin:455px 405px;transform-box:view-box}.robot-visual .planet-orbit-one{animation:planetOrbitOne 15s linear infinite}.robot-visual .planet-orbit-two{animation:planetOrbitTwo 23s linear infinite}.robot-visual .planet-orbit-three{animation:planetOrbitThree 31s linear infinite}.robot-visual .glow{filter:blur(24px);opacity:.23}.robot-visual .outline{stroke:#a9c9df;stroke-width:2.5;fill:url(#project-metal)}.robot-visual .detail{stroke:#80a6bf;stroke-width:2;fill:none}.robot-tagline{position:absolute;z-index:3;top:18px;left:0;right:0;text-align:center;color:#f7f6f2;font:800 clamp(12px,1.5vw,17px)/1 'Manrope',sans-serif;letter-spacing:.22em}@media(prefers-reduced-motion:reduce){.robot-visual .orbit,.robot-visual .planet-orbit-one,.robot-visual .planet-orbit-two,.robot-visual .planet-orbit-three{animation:none}}/* Riuso animazione robot home */.project-robot-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}.project-robot-orbit{position:absolute;width:min(82%,530px);aspect-ratio:1;border:1px solid #9cb7cd44;border-radius:50%;box-shadow:0 0 0 40px #a5c1d512,0 0 0 80px #a5c1d509}.project-robot-stage .hub-robot-svg{position:relative;z-index:2;width:min(56%,390px);max-height:91%;filter:drop-shadow(15px 18px 25px #0006)}.project-robot-stage .robot-tagline{z-index:3;top:24px}@media(max-width:760px){.project-robot-stage .hub-robot-svg{width:min(68%,330px)}}
 </style>
 <link rel="stylesheet" href="/richieste.css">
+<style>
+/* Robotica: eliminate overlapping concept banner on mobile and desktop */
+.robot-detail .project-robot-stage .robot-tagline,.robot-detail .project-robot-stage .image-caption,.robot-detail .project-image .robot-tagline{display:none!important}
+.robot-detail .project-robot-stage{min-height:360px;overflow:hidden;isolation:isolate}
+.robot-detail .project-robot-stage .hub-robot-svg{max-height:340px;object-fit:contain}
+.robot-business{background:#f5f3ed;color:#142331;padding:76px 0}
+.robot-business h2{font:800 clamp(30px,4vw,52px)/1.12 'Manrope',sans-serif;letter-spacing:-.04em;max-width:900px}
+.robot-business p{line-height:1.75;color:#52606c}
+.robot-business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:35px 0}
+.robot-business-card{background:white;border:1px solid #dce0df;padding:28px;border-radius:12px}
+.robot-business-card h3{font-size:21px;margin:0 0 12px}
+.robot-business-card b{color:#e85f39;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.robot-partner-note{background:#142536;color:#fff;border-radius:16px;padding:32px;margin-top:32px}
+.robot-partner-note p{color:#c9d4de}
+@media(max-width:760px){.robot-business{padding:52px 0}.robot-business-grid{grid-template-columns:1fr}.robot-detail .project-robot-stage{min-height:280px}.robot-detail .project-robot-stage .hub-robot-svg{max-height:260px}}
+</style>
 </head>
 <body class="detail-page robot-detail">
   <header class="site-header">
@@ -914,5 +930,16 @@
     try{setLanguage(localStorage.getItem('innova-lang')==='fr'?'fr':'it')}catch(e){setLanguage('it')}
     renderVoice();updateVoiceRoi();
   </script>
+<section class="robot-business" id="robot-business"><div class="container">
+<div class="eyebrow">INNOVA ROBOTICS · SVILUPPO COMMERCIALE</div>
+<h2>Robot umanoidi per eventi, aziende e nuovi mercati.</h2>
+<p>Innova Group Service sviluppa un progetto dedicato al noleggio, alla vendita e alla distribuzione di soluzioni robotiche in Italia, con partenza dal Piemonte. Collaboriamo con produttori e operatori internazionali per valutare tecnologie, dimostrazioni e modelli commerciali.</p>
+<div class="robot-business-grid">
+<article class="robot-business-card"><b>01 · Eventi</b><h3>Noleggio robot umanoidi</h3><p>Esperienze per fiere, congressi, matrimoni, eventi aziendali, showroom e attività promozionali. Proposte personalizzate e disponibilità su richiesta.</p></article>
+<article class="robot-business-card"><b>02 · Imprese</b><h3>Vendita e soluzioni B2B</h3><p>Valutazione di robot per accoglienza, interazione con visitatori, dimostrazioni e comunicazione. Configurazioni e fattibilità da definire con i fornitori.</p></article>
+<article class="robot-business-card"><b>03 · Partnership</b><h3>Distribuzione in Italia</h3><p>Ricerca di accordi commerciali con produttori internazionali per sviluppare una rete di clienti, eventi e partner sul territorio italiano.</p></article>
+</div>
+<div class="robot-partner-note"><div class="eyebrow">DIALOGHI COMMERCIALI IN CORSO</div><h2 style="color:white;font-size:clamp(26px,3vw,38px)">Un network internazionale in costruzione.</h2><p>Stiamo esplorando opportunità con NOETIX Robotics, per la gamma di robot umanoidi BUMI, e con altri operatori del settore, tra cui MAZTECH e fornitori di soluzioni Unitree. Le interlocuzioni sono preliminari: non costituiscono accordi di distribuzione, partnership ufficiali o disponibilità già confermata dei prodotti.</p><a class="btn btn-primary" href="mailto:info@innovagroupservice.eu?subject=Collaborazione%20robotica%20Innova">Proponi una collaborazione</a></div>
+</div></section>
 </body>
 </html>
