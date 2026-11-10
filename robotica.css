@@ -94,3 +94,14 @@ p { overflow-wrap: break-word; }
   @keyframes orbit { from { transform: rotate(-105deg); } to { transform: rotate(25deg); } }
 }
 
+.faq { display: grid; gap: .65rem; }
+.faq details { background: white; border: 1px solid var(--line); border-radius: .55rem; }
+.faq summary { cursor: pointer; padding: .85rem 1rem; font-weight: 750; overflow-wrap: anywhere; }
+.faq summary::marker { color: #994122; }
+.faq summary:hover { color: #994122; }
+.faq details p { padding: 0 1rem 1rem; color: var(--muted); }
+.contact-actions { margin-top: 1.3rem; }
+.contact-section .contact-actions .button { margin-top: 0; }
+.secondary { border-color: #758797; }
+.secondary:hover { background: #dfe7ec; }
+
