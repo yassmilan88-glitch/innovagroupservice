@@ -1,3 +1,66 @@
+const englishTranslations = {
+  "referencesLabel": "LOCAL EXPERIENCE",
+  "referencesTitle": "Relationships built through real work.",
+  "referencesDesc": "Our team's professional background includes event-related collaborations with companies in the Cuneo area. This experience provides a starting point for developing robotics applications for events and businesses.",
+  "referencesNote": "These references concern previous event-related collaborations. They do not imply endorsement, a current partnership, or robotics projects with the companies named.",
+  "skip": "Skip to content",
+  "navOffer": "Services",
+  "navPartner": "For manufacturers",
+  "navContact": "Contact",
+  "heroA": "Connecting robotics with",
+  "heroB": "the Italian market.",
+  "heroLead": "Innova Group Service SRL is developing a project to bring robotics to Italian businesses and events. We combine local operational experience with a practical market-development approach for international manufacturers, starting in Piedmont.",
+  "heroPartner": "Partner with Innova",
+  "heroOffer": "Explore our services",
+  "about": "ABOUT US",
+  "aboutTitle": "Technical experience. Local presence in Cuneo.",
+  "aboutDesc": "Innova Group Service SRL draws on practical experience in technical and electrical services, with work carried out in the Cuneo and Turin areas. We are building on this foundation to develop a robotics business, initially focused on Piedmont.",
+  "aboutLink": "Discover Innova Group Service",
+  "offer": "WHAT WE DO",
+  "offerTitle": "From live events to market development.",
+  "rent": "Event robot rental",
+  "rentDesc": "For trade fairs, conferences and showrooms. We assess suitable robots, interactions and operating requirements based on the venue, date and audience.",
+  "sales": "B2B robot sales",
+  "salesDesc": "For reception, demonstrations and visitor engagement. We start with the use case and check configurations, availability and support with suppliers.",
+  "distribution": "Distribution in Italy",
+  "distributionDesc": "For manufacturers exploring the Italian market. Together we assess target customers, product positioning and the commercial conditions required for viable distribution.",
+  "maker": "FOR INTERNATIONAL MANUFACTURERS",
+  "makerTitle": "A practical route into the Italian market.",
+  "makerLead": "We propose a phased market-entry approach: product assessment, identification of suitable sectors, demonstrations with prospective customers in Piedmont, and collection of commercial feedback. Distribution, after-sales support and broader expansion would follow only after validation.",
+  "makerCta": "Introduce your technology",
+  "process": "How we could work together",
+  "step1": "Product assessment",
+  "step1Desc": "We review the product range, applications, indicative pricing and objectives for Italy.",
+  "step2": "Demonstrations and feedback",
+  "step2Desc": "We define a use case, demonstration requirements and the feedback to collect.",
+  "step3": "Commercial terms",
+  "step3Desc": "If the trial is promising, we discuss sales channels, supply, support and operational responsibilities.",
+  "dialogues": "INDUSTRY CONVERSATIONS",
+  "dialoguesTitle": "Exploratory discussions and contacts.",
+  "dialoguesIntro": "These conversations are preliminary. No distribution agreement, official partnership or product availability is implied.",
+  "noetix": "Preliminary discussions",
+  "noetixDesc": "Exploring the BUMI humanoid range and possible demonstrations for the Italian market.",
+  "maztech": "Preliminary discussions",
+  "maztechDesc": "Exploratory dialogue about robotic solutions and potential commercial cooperation.",
+  "unitree": "Exploratory supplier contacts",
+  "unitreeDesc": "Contacts within the supply channel to understand Unitree products and procurement conditions.",
+  "contact": "CONTACT",
+  "contactTitle": "Let's discuss your project.",
+  "contactDesc": "Tell us what you have in mind. The buttons open a pre-filled email with the relevant details.",
+  "italy": "Italy",
+  "back": "Back to Innova projects",
+  "faqLabel": "BEFORE YOU CONTACT US",
+  "faqTitle": "Frequently asked questions.",
+  "faqEvent": "How can I check availability for an event?",
+  "faqEventAnswer": "Send us the date, venue and expected audience. We will check suitable models, availability and costs with suppliers before preparing a proposal.",
+  "faqDemo": "How can we arrange a demonstration in Italy?",
+  "faqDemoAnswer": "We start with a use case and agree with the manufacturer on the venue, responsibilities and feedback to collect. A date can be confirmed once feasibility has been checked.",
+  "faqSupport": "Who provides training and after-sales support?",
+  "faqSupportAnswer": "For sales or distribution, we establish with the manufacturer who can provide training, spare parts and support, and under what conditions. Responsibilities are agreed in the proposal.",
+  "eventCta": "I'm planning an event",
+  "producerCta": "I'm a robot manufacturer"
+};
+
 const translations = {
   "referencesLabel": "EXPÉRIENCE LOCALE",
   "referencesTitle": "Des relations construites sur le terrain.",
@@ -62,6 +125,11 @@ const translations = {
 };
 
 const languageContent = {
+  en: {
+    title: 'Robotics for events, businesses and manufacturers | Innova Group Service SRL',
+    description: 'Innova Group Service SRL, Cuneo, Italy. Robotics for events and businesses, with emerging rental, B2B sales and market development opportunities.',
+    language: 'Language', nav: 'Robotics', partner: 'Robotics partnership proposal', project: 'Robotics for an event'
+  },
   it: {
     title: 'Robotica per eventi, imprese e produttori | Innova Group Service SRL',
     description: 'Innova Group Service SRL, Cuneo. Robotica per eventi e imprese, con progetti di noleggio, vendita e distribuzione in Italia.',
@@ -85,6 +153,10 @@ const emailBodies = {
     "partner": "Buongiorno,\nvorrei presentarvi la nostra tecnologia.\n\nAzienda e sito web:\nProdotto o scheda tecnica:\nApplicazioni principali:\nObiettivi per il mercato italiano:\n",
     "project": "Buongiorno,\nvorrei valutare un robot per il nostro evento.\n\nCittà e sede:\nData e durata:\nPubblico previsto:\nTipo di interazione desiderata:\n"
   },
+  "en": {
+    "partner": "Hello,\nI would like to introduce our robotics technology.\n\nCompany and website:\nProduct or technical specification:\nMain applications:\nGoals for the Italian market:\n",
+    "project": "Hello,\nI would like to discuss a robot for our event.\n\nCity and venue:\nDate and duration:\nExpected audience:\nDesired interaction:\n"
+  },
   "fr": {
     "partner": "Bonjour,\nje souhaite vous présenter notre technologie.\n\nEntreprise et site web :\nProduit ou fiche technique :\nPrincipales applications :\nObjectifs sur le marché italien :\n",
     "project": "Bonjour,\nje souhaite étudier la possibilité d’utiliser un robot lors de notre événement.\n\nVille et lieu :\nDate et durée :\nPublic attendu :\nType d’interaction souhaité :\n"
@@ -94,7 +166,8 @@ const emailBodies = {
 const labels = [...document.querySelectorAll('[data-i18n]')].map(element => ({
   element,
   it: element.textContent,
-  fr: translations[element.dataset.i18n]
+  fr: translations[element.dataset.i18n],
+  en: englishTranslations[element.dataset.i18n]
 }));
 const buttons = document.querySelectorAll('[data-lang]');
 
@@ -119,7 +192,7 @@ function setLanguage(language) {
 
 let preferredLanguage = 'it';
 try {
-  if (localStorage.getItem('innova-lang') === 'fr') preferredLanguage = 'fr';
+  if (['fr', 'en'].includes(localStorage.getItem('innova-lang'))) preferredLanguage = localStorage.getItem('innova-lang');
 } catch {
   // Browsers may disable storage. Language switching still works on this page.
 }
