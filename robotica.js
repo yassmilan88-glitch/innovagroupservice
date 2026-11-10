@@ -42,10 +42,19 @@ const translations = {
   "unitreeDesc": "Contacts auprès de fournisseurs pour mieux connaître les solutions Unitree et les conditions d’accès aux produits.",
   "contact": "CONTACT",
   "contactTitle": "Parlons de votre projet.",
-  "contactDesc": "Vous organisez un événement ? Indiquez la ville, la date et le public attendu. Vous fabriquez des robots ? Envoyez-nous une fiche produit et présentez vos objectifs en Italie.",
-  "contactCta": "Écrivez à Innova",
+  "contactDesc": "Parlez-nous de votre projet. Les boutons ouvrent un e-mail avec les informations à renseigner.",
   "italy": "Italie",
-  "back": "Retour aux projets Innova"
+  "back": "Retour aux projets Innova",
+  "faqLabel": "AVANT DE NOUS ÉCRIRE",
+  "faqTitle": "Questions fréquentes.",
+  "faqEvent": "Comment vérifier la disponibilité pour mon événement ?",
+  "faqEventAnswer": "Indiquez-nous la date, le lieu et le type de public. Nous vérifions auprès des fournisseurs les modèles adaptés, leur disponibilité et les coûts avant de vous faire une proposition.",
+  "faqDemo": "Comment organiser une démonstration en Italie ?",
+  "faqDemoAnswer": "Nous partons d’un cas d’usage et définissons avec le fabricant le lieu, le responsable de l’essai et les retours à recueillir. La date est fixée après vérification de la faisabilité.",
+  "faqSupport": "Qui assure la formation et l’assistance ?",
+  "faqSupportAnswer": "Pour une vente ou une distribution, nous vérifions avec le fabricant qui peut assurer la formation, la fourniture de pièces et l’assistance, ainsi que les délais. Les responsabilités sont précisées dans la proposition.",
+  "eventCta": "J’organise un événement",
+  "producerCta": "Je fabrique des robots"
 };
 
 const languageContent = {
@@ -55,7 +64,7 @@ const languageContent = {
     language: 'Lingua',
     nav: 'Robotica',
     partner: 'Proposta di collaborazione robotica',
-    project: 'Progetto robotica'
+    project: 'Robotica per un evento'
   },
   fr: {
     title: 'Robotique pour les événements, les entreprises et les fabricants | Innova Group Service SRL',
@@ -63,7 +72,18 @@ const languageContent = {
     language: 'Langue',
     nav: 'Robotique',
     partner: 'Proposition de collaboration en robotique',
-    project: 'Projet robotique'
+    project: 'Robotique pour un événement'
+  }
+};
+
+const emailBodies = {
+  "it": {
+    "partner": "Buongiorno,\nvorrei presentarvi la nostra tecnologia.\n\nAzienda e sito web:\nProdotto o scheda tecnica:\nApplicazioni principali:\nObiettivi per il mercato italiano:\n",
+    "project": "Buongiorno,\nvorrei valutare un robot per il nostro evento.\n\nCittà e sede:\nData e durata:\nPubblico previsto:\nTipo di interazione desiderata:\n"
+  },
+  "fr": {
+    "partner": "Bonjour,\nje souhaite vous présenter notre technologie.\n\nEntreprise et site web :\nProduit ou fiche technique :\nPrincipales applications :\nObjectifs sur le marché italien :\n",
+    "project": "Bonjour,\nje souhaite étudier la possibilité d’utiliser un robot lors de notre événement.\n\nVille et lieu :\nDate et durée :\nPublic attendu :\nType d’interaction souhaité :\n"
   }
 };
 
@@ -84,7 +104,12 @@ function setLanguage(language) {
   labels.forEach(label => { label.element.textContent = label[language]; });
   buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
   document.querySelectorAll('[data-subject]').forEach(link => {
-    link.href = 'mailto:info@innovagroupservice.eu?subject=' + encodeURIComponent(content[link.dataset.subject]);
+    const type = link.dataset.subject;
+    const params = new URLSearchParams({
+      subject: content[type],
+      body: emailBodies[language][type].replaceAll('\n', '\r\n')
+    });
+    link.href = 'mailto:info@innovagroupservice.eu?' + params.toString().replaceAll('+', '%20');
   });
 }
 
