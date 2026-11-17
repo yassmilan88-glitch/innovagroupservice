@@ -396,6 +396,14 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
 .home-page .contact-btn{background:var(--ink)!important;color:#fff!important}
 .home-page .contact-meta{color:#60717d!important}
 .home-page .contact-meta i{background:var(--orange)!important}
+/* 17/11/2026: foto vera della squadra nella sezione Esperienza sul campo */
+.team-photo{position:relative;margin:0;border-radius:8px;overflow:hidden;aspect-ratio:4/5;background:#d9dcd8;box-shadow:0 22px 48px #142b3918}.team-photo img{display:block;width:100%;height:100%;object-fit:cover}.team-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 14px;background:linear-gradient(transparent,#0b1723e0);color:#fff;font-size:12px;font-weight:700;line-height:1.5}
+.home-page .hub-about-inner{grid-template-columns:minmax(0,380px) 1fr;grid-template-rows:auto auto;column-gap:80px;row-gap:22px;align-items:stretch}
+.home-page .hub-about .team-photo{grid-row:1/3}
+.home-page .hub-about-main{align-self:end}
+.home-page .hub-about-right{align-self:start}
+@media(max-width:900px){.home-page .hub-about-inner{grid-template-columns:minmax(0,300px) 1fr;column-gap:40px}}
+@media(max-width:760px){.home-page .hub-about-inner{grid-template-columns:1fr;row-gap:22px}.home-page .hub-about .team-photo{grid-row:auto;order:2}.home-page .hub-about-main{order:1}.home-page .hub-about-right{order:3}}
 </style>
 </head>
 <body class="home-page"><div id="page-scroll-progress" aria-hidden="true"><div id="page-scroll-progress-fill"></div></div>
@@ -656,6 +664,7 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
 
 <section class="hub-about">
   <div class="container hub-about-inner">
+    <figure class="team-photo"><img loading="lazy" src="/assets/foto/squadra-innova-selfie.jpg" alt="La squadra di Innova Group Service con due clienti davanti a un impianto fotovoltaico appena installato" style="object-position:50% 40%"><figcaption>La squadra Innova con due clienti, a impianto finito</figcaption></figure>
     <div class="hub-about-main"><div class="eyebrow" data-i18n="hubAboutKicker">DAL PIEMONTE, VERSO NUOVE IDEE</div><h2 data-i18n-html="hubAboutHeading">Esperienza sul campo.<br><span>Progetti per domani.</span></h2></div>
     <div class="hub-about-right"><p data-i18n="hubAboutText">Innova Group Service SRL nasce da competenze tecniche e operative. Oggi studia nuove soluzioni in robotica, intelligenza artificiale ed energia, con un approccio pratico e collaborazioni da costruire.</p><a href="/azienda.html" class="hub-about-link"><span data-i18n="hubAboutLink">Conosci Innova Group Service</span><span aria-hidden="true"></span></a></div>
   </div>
