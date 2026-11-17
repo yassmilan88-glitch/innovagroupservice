@@ -508,6 +508,22 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
         <span class="fvh-link">Prenota il controllo<span class="fvh-square" aria-hidden="true"></span></span>
       </a>
     </div>
+<style id="innova-fv-gallery-home">
+.fv-home-gallery{margin:38px 0 6px}.fv-home-gallery h3{font-family:Manrope,sans-serif;font-size:clamp(25px,3vw,38px);letter-spacing:-.035em;margin:0 0 8px}.fv-home-gallery p{color:#66717b;margin:0 0 18px}.fv-home-gallery-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 0 14px;scrollbar-width:thin}.fv-home-gallery-track figure{flex:0 0 min(74vw,380px);margin:0;scroll-snap-align:start}.fv-home-gallery-track img{width:100%;height:260px;object-fit:cover;border-radius:12px;display:block}.fv-home-gallery-track figcaption{font-size:13px;color:#52606b;padding:9px 2px}.fv-home-gallery-more{display:inline-block;margin-top:10px;font-weight:700;text-decoration:underline;text-underline-offset:4px}@media(min-width:900px){.fv-home-gallery-track figure{flex-basis:32%}.fv-home-gallery-track img{height:290px}}
+</style>
+    <section class="fv-home-gallery" aria-labelledby="fvHomeGalleryTitle">
+      <h3 id="fvHomeGalleryTitle">I nostri lavori</h3>
+      <p>Impianti fotovoltaici, sistemi di accumulo e installazioni. Scorri le fotografie.</p>
+      <div class="fv-home-gallery-track" aria-label="Galleria fotografica dei lavori" tabindex="0">
+        <figure><img src="/assets/foto/impianto-consegnato-squadra.jpg" alt="Squadra davanti a un impianto fotovoltaico completato" loading="lazy"><figcaption>Impianto completato</figcaption></figure>
+        <figure><img src="/assets/foto/garage-inverter-batteria.jpg" alt="Inverter e batteria di accumulo installati in garage" loading="lazy"><figcaption>Inverter e accumulo</figcaption></figure>
+        <figure><img src="/assets/foto/balcone-montaggio-pannello.jpg" alt="Montaggio di un pannello fotovoltaico sul balcone" loading="lazy"><figcaption>Installazione su balcone</figcaption></figure>
+        <figure><img src="/assets/foto/balcone-microinverter.jpg" alt="Lavoro sul microinverter di un impianto da balcone" loading="lazy"><figcaption>Collegamenti e componenti</figcaption></figure>
+        <figure><img src="/assets/foto/squadra-clienti-impianto.jpg" alt="Squadra e clienti davanti a un impianto fotovoltaico" loading="lazy"><figcaption>Consegna dell'impianto</figcaption></figure>
+        <figure><img src="/assets/foto/stretta-di-mano-cliente.jpg" alt="Saluto con il cliente al termine del lavoro" loading="lazy"><figcaption>Fine lavori</figcaption></figure>
+      </div>
+      <a class="fv-home-gallery-more" href="/fotovoltaico-casa.html#gallery-title">Scopri tutti i lavori</a>
+    </section>
   </div>
   <script>
     (function(){var b=document.getElementById('fvhBill'),p=document.getElementById('fvhPct'),o=document.getElementById('fvhAnnual');if(!b)return;function c(){var n=Math.max(0,Number(b.value)||0);o.textContent=(n*12*Number(p.value)/100).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0})}b.addEventListener('input',c);p.addEventListener('change',c);c()})();
