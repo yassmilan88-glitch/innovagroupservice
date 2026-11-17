@@ -449,6 +449,16 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
         </div>
       </div>
     </section>
+    <section class="fv-band" id="controllo-impianto" aria-label="Controllo gratuito impianto fotovoltaico">
+      <div class="fv-band-inner" style="grid-template-columns:1fr">
+        <div>
+          <div class="fv-band-eyebrow">Per chi ha già un impianto</div>
+          <h2>Il tuo impianto fotovoltaico non rende come prima? <em>Controllo gratuito.</em></h2>
+          <p>Inverter fermo, produzione in calo, batteria esausta: il nostro tecnico passa a vedere, poi ti diciamo cosa conviene fare. Sopralluogo gratuito a Cuneo e provincia.</p>
+          <a class="fv-band-btn" href="/controllo-impianto.html">Prenota il controllo gratuito</a>
+        </div>
+      </div>
+    </section>
     <script>
       (function(){var end=Date.parse('2026-11-27T12:00:00+01:00');var box=document.getElementById('fvTimerBox');if(!box)return;function p(n){return String(n).padStart(2,'0')}var iv;function tick(){var ms=end-Date.now();if(ms<=0){box.innerHTML='<div style="font:800 20px/1.3 Manrope,sans-serif">Lo sportello 2026 è chiuso.</div>';var s=document.querySelector('.fv-band-slogan');if(s)s.textContent='Preparati per il prossimo bando';if(iv)clearInterval(iv);return}var t=Math.floor(ms/1000);document.getElementById('fvD').textContent=Math.floor(t/86400);document.getElementById('fvH').textContent=p(Math.floor(t%86400/3600));document.getElementById('fvM').textContent=p(Math.floor(t%3600/60));document.getElementById('fvS').textContent=p(t%60)}tick();iv=setInterval(tick,1000)})();
     </script>
