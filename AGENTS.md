@@ -42,7 +42,8 @@ Prima di aggiungere qualcosa si guarda come sono fatte le pagine che esistono gi
 - Bottoni rettangolari: arancione pieno, oppure bordo bianco su fondo scuro. Testo 12px, grassetto.
 - Niente frecce decorative (→ ← ‹ ›) né emoji nei testi e nei bottoni. Se serve un'icona si usa un SVG a linee.
 - Disegni: illustrazioni a linee nello stile del sito (robot, pannelli, mappa).
-- Foto: meglio quelle dei lavori Innova. Se mancano, solo foto con licenza libera (es. Unsplash) che mostrano montaggi veri, su tetto, balcone e parete, mai panorami generici. Stanno nella pagina dedicata, mai in home, con la nota "fotografie illustrative" e il nome dell'autore.
+- Foto: si usano quelle dei lavori Innova, in `assets/foto/` (JPEG, larghezza 800px, nomi descrittivi in italiano). In home solo una, nella sezione "Esperienza sul campo"; le altre nelle pagine dedicate, in riquadri verticali con didascalia breve. Le persone si pubblicano solo con il loro consenso scritto.
+- Foto di repertorio solo se mancano quelle vere: licenza libera (es. Unsplash), montaggi veri e non panorami generici, mai in home, con la nota "fotografie illustrative" e il nome dell'autore.
 
 ## 5. La home
 
