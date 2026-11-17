@@ -59,7 +59,16 @@ footer{padding:38px 0;background:#0b1722;color:#becbd4;font-size:11px}.footer-ro
 @media(max-width:1100px){.facts{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:790px){.timer-card{margin:40px 0 0}.need{grid-template-columns:1fr}.cta .cta-inner.form-wrap{grid-template-columns:1fr}}
 @media(max-width:540px){.facts{grid-template-columns:1fr}.lead-form{grid-template-columns:1fr}.timer{gap:6px}.timer div{padding:12px 4px}}
-.cta .eyebrow{color:#fff}.cta .eyebrow:before{background:#fff}
+/* 17/11/2026: moduli su fondo bianco, arancione solo come accento */
+.cta{background:#fff;color:var(--ink);border-top:1px solid var(--line)}
+.cta .eyebrow{color:var(--orange)}.cta .eyebrow:before{background:var(--orange)}
+.cta p{color:#60717d}
+.cta .cta-link{color:var(--ink);text-decoration-color:var(--orange)}
+.lead-form label{color:var(--ink)}
+.lead-form input,.lead-form select,.lead-form textarea{border:1px solid #cfd3d0;background:#f6f5f1;color:var(--ink)}
+.lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{outline:2px solid #f1663b40;border-color:var(--orange)}
+.form-note{color:#6b777f}.form-note a,.lead-form label.consent a,.lead-form label a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.slogan{background:#ffffff0d;border-color:#ffffff40;color:#e6eef3}
 </style>
 </head>
 <body>
