@@ -109,3 +109,17 @@ svg.arrow-icon{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stro
   .home-page .quick-sections a:hover,.home-page .premium-hub a.hub-card:hover,
   .btn-primary:hover,.contact-btn:hover{transform:none}
 }
+
+/* 17/11/2026: fasce contatti bianche e bottone Contattaci bianco; l'arancione resta solo come accento */
+body .contact{background:#fff;color:#0d1721;border-top:1px solid #e2e0d8}
+body .contact .eyebrow{color:#f1663b}
+body .contact .eyebrow:before{background:#f1663b}
+body .contact h2 span{color:#f1663b!important}
+body .contact-right p{color:#60717d}
+body .contact-email{color:#0d1721;border-bottom-color:#f1663b}
+body .contact-btn{background:#0d1721;color:#fff}
+.site-header .header-cta{background:#fff;color:#112434;border-color:#fff;box-shadow:0 6px 18px #0b172333}
+.site-header .header-cta *{color:inherit}
+.site-header .header-cta::after{border-color:#ffffffaa}
+.site-header .header-cta:hover,.site-header .header-cta:focus-visible{background:#f4f2ec;color:#112434;box-shadow:0 8px 22px #0b172344}
+@media(max-width:760px){body .site-header .header-cta{background:#112434;color:#fff;border-color:#ffffff55;box-shadow:0 8px 24px #0b172366}}

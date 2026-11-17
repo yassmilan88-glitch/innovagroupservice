@@ -365,6 +365,37 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
 @media(max-width:760px){.home-page .robot-hud--left{display:none}.home-page .hub-robot-stage{height:290px;margin-top:8px}}
 @media(min-width:1281px) and (max-width:1400px){.home-page .nav-links{gap:13px}.home-page .nav-links a{font-size:12px}}
 
+/* 17/11/2026 sera: simulatore del risparmio in home */
+.fvh-sim{display:grid;grid-template-columns:1fr minmax(0,460px);gap:50px;align-items:center;margin-bottom:20px;padding:42px 46px;border:1px solid #47667a;border-radius:8px;background:linear-gradient(115deg,#0d202f 0%,#19374b 66%,#23465b 100%);color:#fff;box-shadow:0 22px 48px #142b3910}
+.fvh-sim .fvh-index{color:#ffab86}
+.fvh-sim h3{font:800 clamp(32px,3.4vw,50px)/1.06 'Manrope',sans-serif;letter-spacing:-.055em;margin:18px 0 16px}
+.fvh-sim-copy p{font-size:16px;line-height:1.8;color:#b9cad5;max-width:520px;margin:0}
+.fvh-sim-form{display:flex;flex-direction:column;gap:14px;padding:26px;border:1px solid #66859c66;border-radius:14px;background:linear-gradient(145deg,#203c50,#0e2435)}
+.fvh-sim-form label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;color:#fff}
+.fvh-sim-form input,.fvh-sim-form select{font:inherit;font-size:15px;padding:13px 14px;border:1px solid #ffffff55;background:#ffffff12;color:#fff;border-radius:4px}
+.fvh-sim-form select option{color:#112434}
+.fvh-sim-result{border:1px solid #3d5a6f;background:#0b1a27;border-radius:12px;padding:16px 20px}
+.fvh-sim-result span{display:block;font:800 9px 'Manrope',sans-serif;letter-spacing:.16em;color:#9eb6c4;text-transform:uppercase}
+.fvh-sim-result strong{display:block;margin-top:8px;font:800 clamp(34px,3.2vw,44px)/1 'Manrope',sans-serif;letter-spacing:-.04em;color:var(--orange)}
+.fvh-sim-note{margin:0;font-size:11px;line-height:1.6;color:#9fb3c0}
+.fvh-sim-btn{display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--orange);color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;transition:background .2s}
+.fvh-sim-btn:hover{background:#e5572d}
+@media(max-width:900px){.fvh-sim{grid-template-columns:1fr;gap:28px;padding:32px 28px}}
+@media(max-width:760px){.fvh-sim{padding:28px 22px;margin-bottom:14px}.fvh-sim-form{padding:20px}.fvh-sim-copy p{font-size:14px}}
+
+/* 17/11/2026 sera: fascia contatti bianca, l'arancione resta solo come accento */
+.home-page .contact{background:#fff!important;color:var(--ink)!important;border-top:1px solid #e2e0d8}
+.home-page .contact:before,.home-page .contact:after{display:none!important}
+.home-page .contact .eyebrow{color:var(--orange)!important}
+.home-page .contact .eyebrow:before{background:var(--orange)!important}
+.home-page .contact h2{color:var(--ink)!important}
+.home-page .contact h2 span{color:var(--orange)!important}
+.home-page .contact-right{background:#f6f5f1!important;border:1px solid #e2e0d8!important;box-shadow:none!important}
+.home-page .contact-right p{color:#60717d!important}
+.home-page .contact-email{color:var(--ink)!important;border-bottom-color:var(--orange)!important}
+.home-page .contact-btn{background:var(--ink)!important;color:#fff!important}
+.home-page .contact-meta{color:#60717d!important}
+.home-page .contact-meta i{background:var(--orange)!important}
 </style>
 </head>
 <body class="home-page"><div id="page-scroll-progress" aria-hidden="true"><div id="page-scroll-progress-fill"></div></div>
@@ -429,8 +460,22 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
 <section class="fvh" id="fotovoltaico" aria-labelledby="fvhTitle">
   <div class="container">
     <div class="fvh-head">
-      <div><div class="section-number">FOTOVOLTAICO / LA NOSTRA ATTIVITÀ PRINCIPALE</div><h2 class="section-title" id="fvhTitle">Energia dal sole.<br><span>Per aziende e famiglie.</span></h2></div>
-      <p class="fvh-intro">Impianti fotovoltaici in provincia di Cuneo: per le imprese che vogliono usare il bando della Regione, per le case e per chi ha già un impianto da rimettere in forma.</p>
+      <div><div class="section-number">FOTOVOLTAICO / LA NOSTRA ATTIVITÀ PRINCIPALE</div><h2 class="section-title" id="fvhTitle">Il sole lavora.<br><span>Tu risparmi.</span></h2></div>
+      <p class="fvh-intro">Calcola in pochi secondi quanto potresti risparmiare. Poi scegli il percorso giusto: azienda con il bando della Regione, casa, oppure un impianto che hai già.</p>
+    </div>
+    <div class="fvh-sim" id="risparmio">
+      <div class="fvh-sim-copy">
+        <span class="fvh-index">SIMULATORE INDICATIVO</span>
+        <h3>Quanto potresti risparmiare?</h3>
+        <p>Inserisci la spesa media mensile. Il risultato è un esempio matematico, non una previsione di produzione o una promessa di risparmio. Una stima attendibile richiede consumi, orientamento e configurazione tecnica.</p>
+      </div>
+      <div class="fvh-sim-form">
+        <label>Spesa elettrica media mensile (€)<input id="fvhBill" type="number" min="0" max="10000" value="200" inputmode="numeric"></label>
+        <label>Riduzione ipotetica della spesa<select id="fvhPct"><option value="30">30% (scenario prudente)</option><option value="50" selected>50% (scenario intermedio)</option><option value="65">65% (scenario elevato)</option></select></label>
+        <div class="fvh-sim-result"><span>Risparmio annuo ipotetico</span><strong id="fvhAnnual">1200 €</strong></div>
+        <p class="fvh-sim-note">Esempio non personalizzato; esclusi costi fissi non eliminabili, manutenzione, variazioni tariffarie, incentivi e valorizzazione dell'energia immessa in rete.</p>
+        <a class="fvh-sim-btn" href="/fotovoltaico-casa.html#preventivo">Ottieni una stima reale</a>
+      </div>
     </div>
     <div class="fvh-grid">
       <a class="fvh-card fvh-card--bando" href="/fotovoltaico-aziende.html">
@@ -457,6 +502,7 @@ html:lang(en) .bc-en,html:lang(fr) .bc-fr { display:inline; }
     </div>
   </div>
   <script>
+    (function(){var b=document.getElementById('fvhBill'),p=document.getElementById('fvhPct'),o=document.getElementById('fvhAnnual');if(!b)return;function c(){var n=Math.max(0,Number(b.value)||0);o.textContent=(n*12*Number(p.value)/100).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0})}b.addEventListener('input',c);p.addEventListener('change',c);c()})();
     (function(){var end=Date.parse('2026-11-27T12:00:00+01:00');var box=document.getElementById('fvhTimer');if(!box)return;function p(n){return String(n).padStart(2,'0')}var iv;function tick(){var ms=end-Date.now();if(ms<=0){box.outerHTML='<div class="fvh-closed">Lo sportello 2026 è chiuso.</div>';var l=document.getElementById('fvhTimerLabel');if(l)l.style.display='none';var n=document.getElementById('fvhNote');if(n)n.textContent='Ti aiutiamo a prepararti per il prossimo bando: diagnosi energetica e progetto pronti in anticipo.';var t=document.getElementById('fvhLinkText');if(t)t.textContent='Preparati per il prossimo bando';if(iv)clearInterval(iv);return}var t=Math.floor(ms/1000);document.getElementById('fvhD').textContent=Math.floor(t/86400);document.getElementById('fvhH').textContent=p(Math.floor(t%86400/3600));document.getElementById('fvhM').textContent=p(Math.floor(t%3600/60));document.getElementById('fvhS').textContent=p(t%60)}tick();iv=setInterval(tick,1000)})();
   </script>
 </section>

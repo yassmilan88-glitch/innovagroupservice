@@ -17,7 +17,7 @@ Prima di aggiungere qualcosa si guarda come sono fatte le pagine che esistono gi
 ## 2. Colori e caratteri
 
 - Blu notte: `#111e2b`, `#0b1723`; sfondo scuro a gradiente `#0b1825 → #162b3d`.
-- Arancione: `#f1663b` (al passaggio del mouse `#e5572d`).
+- Arancione: `#f1663b` (al passaggio del mouse `#e5572d`). È **solo un accento**: etichette piccole, seconda parte breve dei titoli, numeri, bottone principale. Mai come sfondo di una fascia intera: l'azienda è una SRL e il sito deve sembrare sobrio e professionale. Dove c'è dubbio, bianco.
 - Chiari: crema `#f6f5f1` e `#f4f2ec`, beige `#edeae2`; bordi `#dfdfd9`.
 - Testi: `#0d1721` / `#112434`, testo secondario `#66717b`.
 - Titoli in **Manrope 800** con spaziatura stretta; testi in **DM Sans**. Si caricano da Google Fonts con lo stesso link delle altre pagine. Mai font di sistema (Arial, system-ui).
@@ -36,15 +36,17 @@ Prima di aggiungere qualcosa si guarda come sono fatte le pagine che esistono gi
 ## 4. Come sono fatte le sezioni
 
 - Etichetta piccola, arancione, maiuscola e numerata (`01 / LE SOLUZIONI`), poi titolo grande in Manrope con la seconda parte in arancione, poi un testo breve grigio.
-- Si alternano sfondi scuri (blu notte) e chiari (crema). I moduli di richiesta stanno su sfondo arancione.
+- Si alternano sfondi scuri (blu notte) e chiari (crema / bianco). Moduli di richiesta e fasce contatti stanno su **fondo bianco**, con campi chiari e bottone blu notte.
+- Il bottone "Contattaci" in testata è bianco con scritta blu notte (sul telefono, quello fisso in basso è blu notte).
 - Schede: bianche con bordo sottile, oppure blu notte; angoli 8px; il link è in basso, separato da una linea, con il quadratino al posto della freccia.
 - Bottoni rettangolari: arancione pieno, oppure bordo bianco su fondo scuro. Testo 12px, grassetto.
 - Niente frecce decorative (→ ← ‹ ›) né emoji nei testi e nei bottoni. Se serve un'icona si usa un SVG a linee.
-- Disegni: illustrazioni a linee nello stile del sito (robot, pannelli, mappa). Foto di repertorio solo nella pagina dedicata, mai in home, e con la nota "fotografie illustrative".
+- Disegni: illustrazioni a linee nello stile del sito (robot, pannelli, mappa).
+- Foto: meglio quelle dei lavori Innova. Se mancano, solo foto con licenza libera (es. Unsplash) che mostrano montaggi veri, su tetto, balcone e parete, mai panorami generici. Stanno nella pagina dedicata, mai in home, con la nota "fotografie illustrative" e il nome dell'autore.
 
 ## 5. La home
 
-Ordine fisso: apertura con il robot → barra dei numeri → **Fotovoltaico** (tre schede: aziende con conto alla rovescia, casa, controllo impianto) → mappa "Dall'Italia, verso il mondo" → Progetti concreti → Metodo → Esperienza → Contatto → pulsanti delle sezioni → modulo → piè di pagina.
+Ordine fisso: apertura con il robot → barra dei numeri → **Fotovoltaico** (si apre col simulatore del risparmio, poi tre schede: aziende con conto alla rovescia, casa, controllo impianto) → mappa "Dall'Italia, verso il mondo" → Progetti concreti → Metodo → Esperienza → Contatto → pulsanti delle sezioni → modulo → piè di pagina.
 
 - La home mostra anteprime; i dettagli stanno nelle pagine dedicate.
 - Niente fasce nuove tra l'apertura e la barra dei numeri.
