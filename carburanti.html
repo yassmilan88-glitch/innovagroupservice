@@ -124,7 +124,7 @@ footer{background:#0d2030;color:#bfd0d8;padding:55px 0 26px}.footer-grid{display
     </div>
     <div class="form-card">
       <h3 data-i18n="formTitle">Dati per la richiesta</h3>
-      <form id="fuelForm" name="prodotti-petroliferi" method="POST" action="/grazie.html" data-netlify="true" netlify-honeypot="bot-field"><input hidden name="bot-field" tabindex="-1">
+      <form id="fuelForm" name="prodotti-petroliferi" method="POST" action="/grazie.html" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="prodotti-petroliferi"><input hidden name="bot-field" tabindex="-1">
         <div class="fields">
           <div class="field"><label for="company" data-i18n="companyLabel">Azienda *</label><input id="company" name="company" autocomplete="organization" required maxlength="120" placeholder="Ragione sociale"></div>
           <div class="field"><label for="contact" data-i18n="contactLabel">Referente *</label><input id="contact" name="contact" autocomplete="name" required maxlength="100" placeholder="Nome e cognome"></div>
